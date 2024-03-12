@@ -1,0 +1,81 @@
+
+*{
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+textarea:focus, input:focus, select:focus {
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+} 
+
+body{
+  background-color: #f7f7f7;
+}
+
+@media (max-width: 1023px) {
+  .login-container{
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    min-height: 90vh;
+    justify-content: center;
+
+  }
+  input::placeholder {
+    color: #271d77;
+  }
+
+  .image-login{
+    margin: 50px 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-container .input-login, .btn-login{
+    min-height: 40px;
+    height: 40px;
+    min-width: 100% !important;
+    border-radius: 20px;
+    border: 1px solid #271d77;
+    background-color: #fff;
+  }
+
+  .input-login{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color:#271d77;
+  }
+
+
+  .forgot-password{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+
+  .login-container input{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .btn-login{
+    width: 100%;
+    border: none;
+    background-color: #271d77;
+    color: #fff;
+    margin: 5px;
+    
+  }
+}
+
+
+/*End Mobile*/

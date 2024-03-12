@@ -26,9 +26,7 @@ select{
         display: flex;
         justify-content: center;
     }
-    .imagem{
-        max-width: 50vw;
-    }
+ 
     body {
         height: 100vh;
         font-family: arial, sans-serif;
