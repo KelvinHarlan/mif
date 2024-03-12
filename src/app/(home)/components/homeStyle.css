@@ -7,8 +7,11 @@ input, select{
     border: 1px solid #e7e7e7 !important;   
     border-radius: 5px !important;
     min-height: 40px;
-    max-height: 40px;
-     
+    max-height: 40px;   
+}
+
+select{
+    padding: 10px !important;
 }
 
 @media (max-width: 768px) {
@@ -46,14 +49,15 @@ input, select{
     .dadosPessoais {
         display: flex;
         flex-direction: column;
-        align-items: center;
         padding-top: 2vh;
         margin-bottom: 2vh;
         background-color:#fff;
         border-radius: 20px 20px 5px 5px;
         box-shadow: #e7e7e7;
+        padding: 10px;
        
     }
+
 
     /* .input-nome,
     .input-idade,
@@ -69,46 +73,31 @@ input, select{
         
     } */
 
-    .lb-nome,
-    .lb-idade,
-    .lb-sexo,
-    .lb-cadeirante,
-    .lb-local {
-        display: flex;
-        justify-content: start;
-        align-items: center;
-        margin: 1vw;
-        
-    }
-
-
-    .caixa-formulario label {
-        display: block;
-        margin: 0.1vh;
-        margin-top: 2vh;
-        
-        
-    }
 
     .caixa-formulario {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
         background-color: #fff;
         box-shadow: #e7e7e7;
         border-radius: 5px 5px 20px 20px;
-        
+        width: 100%;
+       
     }
 
     .caixa-form-autoCuidado,
     .caixa-form-mobilidade,
     .caixa-form-locomocao,
     .caixa-form-comunicacao,
-    .caixa-form-conhecimento-social {
-        margin-left: 2vw;
-        margin-bottom: 2vh;
-        
+    .caixa-form-conhecimento-social, 
+    .caixa-form-controleEsfincteres 
+     {
+        margin-bottom: 10px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        width: 100%;
     }
 
     .caixa-resultados {
@@ -132,7 +121,7 @@ input, select{
     }
 
 
-    select {
+    /* select {
         width: 85vw;
         margin: 2vw;
         height: 3rem;
@@ -141,7 +130,7 @@ input, select{
         font-size: 1rem;
        
 
-    }
+    } */
 
     .botao-enviar {
         display: flex;
@@ -202,6 +191,19 @@ input, select{
         background-color: transparent;
         border: 2px solid rgb(255, 255, 255);
 
+    }
+    .titulos-cards{
+        background-color: #271d77;
+        color: white;
+        border-radius: 5px;
+        text-align: center !important;
+        width: 100%;
+        padding: .25rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        justify-content: center;
+        margin-top: 10px;
     }
 
 }
@@ -324,7 +326,9 @@ input, select{
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-      
+        max-height: 60vh;
+        overflow: auto;
+        width: 70%;
         /* background-color:#fff; */
         box-shadow: #e7e7e7;
         border-radius: 5px;

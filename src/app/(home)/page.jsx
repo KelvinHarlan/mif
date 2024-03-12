@@ -5,8 +5,10 @@ import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
 import {
   FaCommentDots,
+  FaFileDownload,
   FaPaperPlane,
   FaPuzzlePiece,
+  FaRegTrashAlt,
   FaRunning,
   FaToilet,
   FaUtensils,
@@ -16,8 +18,8 @@ import imagem from "../../../public/imagens/logo.png";
 import "./components/homeStyle.css";
 
 const index = () => {
-  // https://react-icons.github.io/react-icons/icons/fa/ ##################################################
   //Variables
+
   //Sex Options
   const sexoptions = [
     { value: "Masculino", label: "Masculino" },
@@ -301,10 +303,19 @@ const index = () => {
         </div>
 
         <div className="botao-enviar m-4 d-flex gap-2">
-          <button className="btn bg-success text-white">Enviar</button>
-          <button className="btn bg-danger text-white">Limpar</button>
-          <button className="btn bg-primary text-white">Imprimir</button>
-          <button className="btn bg-secondary text-white">Copiar</button>
+          <button className="btn bg-success text-white">
+            Enviar{" "}
+            <i className="text-white">
+              <FaPaperPlane />
+            </i>
+          </button>
+          <button className="btn bg-white border">
+            <FaRegTrashAlt />
+          </button>
+          <button className="btn bg-white border">
+            <FaFileDownload />
+          </button>
+          <button className="btn bg-white border">Copiar</button>
         </div>
       </div>
     </div>
