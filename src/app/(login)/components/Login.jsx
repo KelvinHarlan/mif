@@ -32,8 +32,8 @@ const Login = () => {
       <div className="image-login">
         <Image
           src={imagem}
-          width={200}
-          height={68}
+          width={220}
+          height={75}
           alt="Logo"
           priority={true}
         />
