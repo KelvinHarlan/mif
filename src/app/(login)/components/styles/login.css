@@ -34,8 +34,8 @@ body{
   }
 
   .login-container .input-login, .btn-login{
-    min-height: 40px;
-    height: 40px;
+    min-height: 45px;
+    height: 45px;
     min-width: 100% !important;
     border-radius: 20px;
     border: 1px solid #271d77;
