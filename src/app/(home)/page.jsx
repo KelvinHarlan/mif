@@ -5,8 +5,9 @@ import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
 import {
   FaCommentDots,
-  FaFileDownload,
+  FaCopy,
   FaPaperPlane,
+  FaPrint,
   FaPuzzlePiece,
   FaRegTrashAlt,
   FaRunning,
@@ -313,9 +314,11 @@ const index = () => {
             <FaRegTrashAlt />
           </button>
           <button className="btn bg-white border">
-            <FaFileDownload />
+            <FaPrint />
           </button>
-          <button className="btn bg-white border">Copiar</button>
+          <button className="btn bg-white border">
+            <FaCopy />
+          </button>
         </div>
       </div>
     </div>

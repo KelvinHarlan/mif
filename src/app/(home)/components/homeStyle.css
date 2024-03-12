@@ -14,7 +14,7 @@ select{
     padding: 10px !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     html {
         scroll-behavior: smooth;
     }
@@ -214,7 +214,7 @@ select{
 
 
 
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
 
     .titulos-cards{
         background-color: #271d77;
