@@ -5,12 +5,26 @@ import imagem from "@/../public/imagens/logo.png";
 import Input from "@/components/common/form/Input/Input";
 import { FaEye, FaLock, FaRegEyeSlash, FaUser } from "react-icons/fa";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
+  const router = useRouter();
   const [viewPassword, setViewPassword] = useState(false);
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   const handleViewPassword = () => {
     setViewPassword(!viewPassword);
+  };
+  const [passwordLogin, setPasswordLogin] = useState("123");
+  const [emailLogin, setEmailLogin] = useState("avaliamais@gmail.com");
+
+  const verifyLogin = () => {
+    if (password === passwordLogin && emailLogin === email) {
+      console.log("Login realizado com sucesso");
+      router.push("/home");
+    } else {
+      console.log("algo deu errado ");
+    }
   };
 
   return (
@@ -26,7 +40,10 @@ const Login = () => {
       </div>
 
       <span className="input-login">
-        <Input placeholder="Email" />
+        <Input
+          onChange={({ target }) => setEmail(target.value)}
+          placeholder="Email"
+        />
         <FaUser style={{ color: "#271d77" }} />
       </span>
       <span className="input-login">
@@ -56,7 +73,9 @@ const Login = () => {
       <div className="forgot-password">
         <span>Esqueceu a senha?</span>
       </div>
-      <button className="btn-login">Entrar</button>
+      <button onClick={verifyLogin} className="btn-login">
+        Entrar
+      </button>
     </div>
   );
 };
