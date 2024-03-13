@@ -35,8 +35,12 @@ const Login = () => {
     <div className="container">
       <div className="card-box">
         <div className="card-login-desktop">
-          <div className="content-card-desktop text-center">
-            <div className="image-login">
+          <div className="content-card-desktop">
+            <div className="box-text-desk-login">
+              <h2 className="m-0"> Olá, seja</h2>
+              <h1 style={{ paddingLeft: "20px" }}>BEM VINDO!</h1>
+            </div>
+            <div className="image-login-desk">
               <Image
                 src={imgMedical}
                 width={400}
@@ -45,7 +49,6 @@ const Login = () => {
                 priority={true}
               />
             </div>
-            <h5> Cuidar com precisão, avaliar com o coração.</h5>
           </div>
         </div>
         <div className="login-container">
@@ -59,14 +62,14 @@ const Login = () => {
             />
           </div>
 
-          <span className="input-login">
+          <div className="input-login">
             <Input
               onChange={({ target }) => setEmail(target.value)}
               placeholder="Email"
             />
-            <FaUser  style={{ color: "#271d77" }} />
-          </span>
-          <span className="input-login">
+            <FaUser style={{ color: "#271d77" }} />
+          </div>
+          <div className="input-login">
             <Input
               onChange={({ target }) => setPassword(target.value)}
               type={viewPassword ? "text" : "password"}
@@ -89,7 +92,7 @@ const Login = () => {
                 )}
               </>
             )}
-          </span>
+          </div>
           <div className="forgot-password">
             <span>Esqueceu a senha?</span>
           </div>
