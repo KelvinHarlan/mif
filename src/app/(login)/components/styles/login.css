@@ -147,10 +147,7 @@ body{
     color:#271d77;
   }
 
-  .input-login input{
-    min-width: 100%;
-    background-color: red;
-  }
+
 
 
   .forgot-password{
@@ -161,11 +158,9 @@ body{
   }
 
   .login-container input{
-  
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: orange;
     border: none;
+    
   }
 
   .btn-login{

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import imagem from "@/../public/imagens/logo.png";
+import imgMedical from "@/../public/imagens/medical.svg";
 import Input from "@/components/common/form/Input/Input";
 import { FaEye, FaLock, FaRegEyeSlash, FaUser } from "react-icons/fa";
 import { useState } from "react";
@@ -35,6 +36,15 @@ const Login = () => {
       <div className="card-box">
         <div className="card-login-desktop">
           <div className="content-card-desktop text-center">
+            <div className="image-login">
+              <Image
+                src={imgMedical}
+                width={400}
+                height={400}
+                alt="Logo"
+                priority={true}
+              />
+            </div>
             <h5> Cuidar com precisão, avaliar com o coração.</h5>
           </div>
         </div>
@@ -54,7 +64,7 @@ const Login = () => {
               onChange={({ target }) => setEmail(target.value)}
               placeholder="Email"
             />
-            <FaUser style={{ color: "#271d77" }} />
+            <FaUser  style={{ color: "#271d77" }} />
           </span>
           <span className="input-login">
             <Input
