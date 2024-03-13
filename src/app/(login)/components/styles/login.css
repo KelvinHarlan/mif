@@ -113,18 +113,18 @@ body{
   }
   
   .login-container{
-    min-height: 90vh;
     display: flex;
     flex-direction: column;
     padding: 0 30px;
     justify-content: center;
     width: 50%;
-
+    padding: 100px;
   }
 
   input::placeholder {
     color: #271d77;
   }
+
 
   .image-login-desk{
     margin-bottom: -15px;

@@ -36,7 +36,7 @@ const Login = () => {
       <div className="card-box">
         <div className="card-login-desktop">
           <div className="content-card-desktop">
-            <div className="box-text-desk-login">
+            <div className="box-text-desk-login p-4">
               <h2 className="m-0"> Olá, seja</h2>
               <h1 style={{ paddingLeft: "20px" }}>BEM VINDO!</h1>
             </div>
