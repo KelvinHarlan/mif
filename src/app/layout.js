@@ -1,9 +1,15 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function RootLayout({ children }) {
- return (
+  return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {/* Adicione o ToastContainer aqui */}
+        <ToastContainer position="bottom-right" />
+        {children}
+      </body>
     </html>
-  )
+  );
 }

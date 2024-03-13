@@ -6,6 +6,7 @@ import Input from "@/components/common/form/Input/Input";
 import { FaEye, FaLock, FaRegEyeSlash, FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const router = useRouter();
@@ -21,9 +22,11 @@ const Login = () => {
   const verifyLogin = () => {
     if (password === passwordLogin && emailLogin === email) {
       console.log("Login realizado com sucesso");
+      toast.success("Login realizado com sucesso!");
       router.push("/home");
     } else {
       console.log("algo deu errado ");
+      toast.error("Login ou senha inválido.");
     }
   };
 
