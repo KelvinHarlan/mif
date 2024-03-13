@@ -31,54 +31,63 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="image-login">
-        <Image
-          src={imagem}
-          width={220}
-          height={75}
-          alt="Logo"
-          priority={true}
-        />
-      </div>
+    <div className="container">
+      <div className="card-box">
+        <div className="card-login-desktop">
+          <div className="content-card-desktop text-center">
+            <h5> Cuidar com precisão, avaliar com o coração.</h5>
+          </div>
+        </div>
+        <div className="login-container">
+          <div className="image-login">
+            <Image
+              src={imagem}
+              width={220}
+              height={75}
+              alt="Logo"
+              priority={true}
+            />
+          </div>
 
-      <span className="input-login">
-        <Input
-          onChange={({ target }) => setEmail(target.value)}
-          placeholder="Email"
-        />
-        <FaUser style={{ color: "#271d77" }} />
-      </span>
-      <span className="input-login">
-        <Input
-          onChange={({ target }) => setPassword(target.value)}
-          type={viewPassword ? "text" : "password"}
-          placeholder="Senha"
-        />
-        {!password ? (
-          <FaLock style={{ color: "#271d77" }} />
-        ) : (
-          <>
-            {!viewPassword ? (
-              <FaEye
-                onClick={handleViewPassword}
-                style={{ color: "#271d77" }}
-              />
+          <span className="input-login">
+            <Input
+              onChange={({ target }) => setEmail(target.value)}
+              placeholder="Email"
+            />
+            <FaUser style={{ color: "#271d77" }} />
+          </span>
+          <span className="input-login">
+            <Input
+              onChange={({ target }) => setPassword(target.value)}
+              type={viewPassword ? "text" : "password"}
+              placeholder="Senha"
+            />
+            {!password ? (
+              <FaLock style={{ color: "#271d77" }} />
             ) : (
-              <FaRegEyeSlash
-                onClick={handleViewPassword}
-                style={{ color: "#271d77" }}
-              />
+              <>
+                {!viewPassword ? (
+                  <FaEye
+                    onClick={handleViewPassword}
+                    style={{ color: "#271d77" }}
+                  />
+                ) : (
+                  <FaRegEyeSlash
+                    onClick={handleViewPassword}
+                    style={{ color: "#271d77" }}
+                  />
+                )}
+              </>
             )}
-          </>
-        )}
-      </span>
-      <div className="forgot-password">
-        <span>Esqueceu a senha?</span>
+          </span>
+          <div className="forgot-password">
+            <span>Esqueceu a senha?</span>
+          </div>
+          <button onClick={verifyLogin} className="btn-login">
+            Entrar
+          </button>
+        </div>
       </div>
-      <button onClick={verifyLogin} className="btn-login">
-        Entrar
-      </button>
     </div>
   );
 };

@@ -15,6 +15,9 @@ body{
 }
 
 @media (max-width: 1023px) {
+  .card-login-desktop{
+    display: none;
+  }
   .login-container{
     display: flex;
     flex-direction: column;
@@ -76,6 +79,106 @@ body{
     
   }
 }
+
+/*Start Desktop*/
+@media (min-width: 1023px) {
+  .card-login-desktop{
+    background-color: #271d77;
+    width: 50%;
+    color: #fff;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .card-box{
+    display: flex;
+    width: 100%;
+    box-shadow: 0 0 8px #c4c4c4 ;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+ 
+  }
+  
+  .login-container{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px;
+    justify-content: center;
+    width: 50%;
+
+  }
+  input::placeholder {
+    color: #271d77;
+  }
+
+  .image-login{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .login-container .input-login, .btn-login{
+    min-height: 45px;
+    height: 45px;
+    min-width: 100% !important;
+    border-radius: 20px;
+    border: 1px solid #271d77;
+    background-color: #fff;
+  }
+
+  .input-login{
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color:#271d77;
+  }
+
+  .input-login input{
+    min-width: 100%;
+    background-color: red;
+  }
+
+
+  .forgot-password{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+  }
+
+  .login-container input{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }
+
+  .btn-login{
+    width: 100%;
+    border: none;
+    background-color: #271d77;
+    color: #fff;
+    margin: 5px;
+    
+  }
+}
+
+/* End Desktop*/
 
 
 /*End Mobile*/
