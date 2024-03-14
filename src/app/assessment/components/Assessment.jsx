@@ -10,19 +10,21 @@ const Assessment = () => {
   };
   return (
     <div className="container-assessment">
-      <div className="avaliation-logo">
-        <Image
-          src={imagemLogo}
-          width={250}
-          height={90}
-          alt="Logo"
-          priority={true}
-        />
-      </div>
-      <div className="avaliation-user">
-        <div className="box-user-label">
-          <FaUserCircle className="img-user" />
-          <h4>Olá, Renata</h4>
+      <div className="container-logo-user">
+        <div className="avaliation-logo">
+          <Image
+            src={imagemLogo}
+            width={250}
+            height={90}
+            alt="Logo"
+            priority={true}
+          />
+        </div>
+        <div className="avaliation-user">
+          <div className="box-user-label">
+            <FaUserCircle className="img-user" />
+            <h4>Olá, Renata</h4>
+          </div>
         </div>
       </div>
 
