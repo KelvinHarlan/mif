@@ -64,7 +64,6 @@ const index = () => {
   return (
     <div className="w-100">
       <div className="container p-1">
-        <h1 className="textoSemCss">+ Função</h1>
         <div className="titulo">
           <Image
             src={imagem}
