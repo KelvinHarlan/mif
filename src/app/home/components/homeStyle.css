@@ -113,7 +113,7 @@ select{
     }
 
 
-    .botao-enviar {
+    /* .botao-enviar {
         display: flex;
         justify-content: center;
         position: fixed;
@@ -126,7 +126,7 @@ select{
         border-radius: 5px 5px 0 0 ;
         box-shadow: 2px 0 5px #c0c0c0;
         z-index: 9999;
-    }
+    } */
 
     .enviar {
         display: inline-block;

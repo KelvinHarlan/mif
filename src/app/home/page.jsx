@@ -441,19 +441,19 @@ const index = () => {
 
           <button
             style={{ backgroundColor: "#271d77" }}
-            className="btn border text-white"
+            className="btn border bg-white"
           >
             <FaRegTrashAlt />
           </button>
           <button
             style={{ backgroundColor: "#271d77" }}
-            className="btn text-white border"
+            className="btn bg-white border"
           >
             <FaPrint />
           </button>
           <button
             style={{ backgroundColor: "#271d77" }}
-            className="btn text-white border"
+            className="btn bg-white border"
           >
             <FaCopy />
           </button>

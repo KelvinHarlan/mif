@@ -1,3 +1,21 @@
+function downloadpdf() { /* Salvando o texto em PDF*/
+    nome = document.querySelector('.input-nome');
+    let texto = document.querySelector('.texto-resultado');
+    let janela = window.open('', '', 'width = 800, heigth = 600');
+    janela.document.write(texto.innerHTML);
+
+
+    if (nome.value !== '') {
+        janela.document.title = nome.value;
+    }
+    else {
+        janela.document.title = 'Paciente sem nome informado';
+    };
+
+    janela.print();
+};
+
+
 const alimentacaoResult = (alimentacao) => {
   if (alimentacao === "1") {
     return {
