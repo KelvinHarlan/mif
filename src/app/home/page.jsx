@@ -439,13 +439,22 @@ const index = () => {
             </i>
           </button>
 
-          <button className="btn bg-white border">
+          <button
+            style={{ backgroundColor: "#271d77" }}
+            className="btn border text-white"
+          >
             <FaRegTrashAlt />
           </button>
-          <button className="btn bg-white border">
+          <button
+            style={{ backgroundColor: "#271d77" }}
+            className="btn text-white border"
+          >
             <FaPrint />
           </button>
-          <button className="btn bg-white border">
+          <button
+            style={{ backgroundColor: "#271d77" }}
+            className="btn text-white border"
+          >
             <FaCopy />
           </button>
         </div>
