@@ -33,7 +33,8 @@ body{
     justify-content: center;
 
   }
-  input::placeholder {
+
+ .card-login-desktop input::placeholder {
     color: #271d77;
   }
 
@@ -134,7 +135,7 @@ body{
     
   }
 
-  input::placeholder {
+  .card-login-desktop input::placeholder {
     color: #271d77;
   }
 
