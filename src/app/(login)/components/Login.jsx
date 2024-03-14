@@ -24,7 +24,7 @@ const Login = () => {
     if (password === passwordLogin && emailLogin === email) {
       console.log("Login realizado com sucesso");
       toast.success("Login realizado com sucesso!");
-      router.push("/home");
+      router.push("/assessment");
     } else {
       console.log("algo deu errado ");
       toast.error("Login ou senha inválido.");
