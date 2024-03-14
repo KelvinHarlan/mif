@@ -32,7 +32,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container-login">
       <div className="card-box">
         <div className="card-login-desktop">
           <div className="content-card-desktop">

@@ -4,6 +4,12 @@
   text-decoration: none;
 }
 
+
+.container-login input {
+  border: none !important;
+  background-color: #fff !important;
+}
+
 textarea:focus, input:focus, select:focus {
   box-shadow: 0 0 0 0;
   border: 0 none;
@@ -14,7 +20,8 @@ body{
   background-color: #f7f7f7;
 }
 
-@media (max-width: 1023px) {
+/*Start Mobile*/
+@media (max-width: 1024px) {
   .card-login-desktop{
     display: none;
   }
@@ -81,7 +88,7 @@ body{
 }
 
 /*Start Desktop*/
-@media (min-width: 1023px) {
+@media (min-width: 1024px) {
   .card-login-desktop{
     background-color: #271d77;
     width: 50%;
@@ -90,10 +97,10 @@ body{
     display: flex;
     justify-content: center;
     align-items: flex-end;
+   
 
   }
 
- 
 
   .card-box{
     display: flex;
@@ -102,13 +109,18 @@ body{
     border: 1px solid #e0e0e0;
     border-radius: 10px;
     overflow: hidden;
+    max-width: 960px;
+    min-width: 960px;
+    
   }
 
-  .container{
+  .container-login{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
+ 
  
   }
   
@@ -119,6 +131,7 @@ body{
     justify-content: center;
     width: 50%;
     padding: 100px;
+    
   }
 
   input::placeholder {
@@ -156,8 +169,10 @@ body{
     color:#271d77;
   }
 
-  .form-group{
-    width: 100%;
+  .login-container .form-group{
+    width: 90% ;
+  
+    
   }
 
 
@@ -168,10 +183,6 @@ body{
     
   }
 
-  .login-container input{
-    border: none;
-    
-  }
 
   .btn-login{
     width: 100%;

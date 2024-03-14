@@ -1,5 +1,5 @@
 "use client";
-
+import "./components/homeStyle.css";
 import Input from "@/components/common/form/Input/Input";
 import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
@@ -16,7 +16,6 @@ import {
   FaWheelchair,
 } from "react-icons/fa";
 import imagem from "../../../public/imagens/logo.png";
-import "./components/homeStyle.css";
 
 const index = () => {
   //Variables
@@ -29,8 +28,15 @@ const index = () => {
 
   // Wheelchair Options
   const wheelchairOptions = [
-    { value: "Sim", label: "Sim" },
-    { value: "Não", label: "Não" },
+    { value: "Enfermagem", label: "Enfermagem" },
+    { value: "Fisioterapia", label: "Fisioterapia" },
+    { value: "Fonoaudiologia", label: "Fonoaudiologia" },
+    { value: "Nutrição", label: "Nutrição" },
+    { value: "Medicina", label: "Medicina" },
+    { value: "Odontologia", label: "Odontologia" },
+    { value: "Psicologia", label: "Psicologia" },
+    { value: "Terapia Ocupacional", label: "Terapia Ocupacional" },
+   
   ];
 
   //Alimentacao options
@@ -89,9 +95,7 @@ const index = () => {
                 placeholder="Digite a idade"
               />
             </div>
-            <div className="col-lg-2">
-              <Input label="Local:" type="text" placeholder="Digite o local" />
-            </div>
+
             <div className="col-lg-2">
               <Select
                 label="Sexo:"
@@ -104,13 +108,16 @@ const index = () => {
             </div>
             <div className="col-lg-2">
               <Select
-                label="Cadeira de rodas:"
+                label="Área de atuação:"
                 className="text-secondary p-1"
                 name="sexo"
                 id="sexo"
                 placeholder="Selecione"
                 options={wheelchairOptions}
               />
+            </div>
+            <div className="col-lg-2">
+              <Input label="Local:" type="text" placeholder="Digite o local" />
             </div>
           </div>
         </div>

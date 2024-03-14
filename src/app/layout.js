@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body>
         {/* Adicione o ToastContainer aqui */}
         <ToastContainer position="bottom-right" />
