@@ -30,9 +30,8 @@ select{
  
     body {
         height: 100vh;
-        font-family: arial, sans-serif;
+       
         padding: 0;
-        display: flex;
         justify-content: center;
         background-color: #f7f7f7;
     }
@@ -243,8 +242,6 @@ select{
 
 
     body {
-        font-family: arial, sans-serif;
-        display: flex;
         justify-content: center;
         align-items: center;
         background-color: #f7f7f7;

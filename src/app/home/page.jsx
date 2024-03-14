@@ -36,7 +36,6 @@ const index = () => {
     { value: "Odontologia", label: "Odontologia" },
     { value: "Psicologia", label: "Psicologia" },
     { value: "Terapia Ocupacional", label: "Terapia Ocupacional" },
-   
   ];
 
   //Alimentacao options
@@ -66,7 +65,7 @@ const index = () => {
     <div className="w-100">
       <div className="container p-1">
         <h1 className="textoSemCss">+ Função</h1>
-        <h1 className="titulo">
+        <div className="titulo">
           <Image
             src={imagem}
             width={250}
@@ -74,7 +73,7 @@ const index = () => {
             alt="Logo"
             priority={true}
           />
-        </h1>
+        </div>
         {/* <button className="mudarDeCor" onClick={console.log("mudar de cor")}>
           <i className="text-dark fa-solid fa-moon"></i>
         </button> */}
