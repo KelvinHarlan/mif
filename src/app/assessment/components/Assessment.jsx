@@ -34,15 +34,18 @@ const Assessment = () => {
 
       <div className="box-cards">
         <div className="card">
-          <span className="content-card">INVENTÁRIO DE DEPRESSÃO DE BECK</span>
-          <FaInfoCircle className="icon-card" />
-        </div>
-        <div className="card">
           <span className="content-card">
             AVALIAÇÃO PRÉ-ANESTÉSICA DA SAÚDE BUCAL
           </span>
           <FaInfoCircle className="icon-card" />
         </div>
+        <div className="card">
+          <span className="content-card">
+            ESCALA DE DEPRESSÃO GERIÁTRICA ABREVIADA
+          </span>
+          <FaInfoCircle className="icon-card" />
+        </div>
+
         <div onClick={handleMif} className="card">
           <span className="content-card">
             MEDIDA DE INDEPENDÊNCIA FUNCIONAL
