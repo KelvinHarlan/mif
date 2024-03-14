@@ -65,6 +65,8 @@ const Login = () => {
           <div className="input-login">
             <Input
               onChange={({ target }) => setEmail(target.value)}
+              type="email"
+              id="email"
               placeholder="Email"
             />
             <FaUser style={{ color: "#271d77" }} />

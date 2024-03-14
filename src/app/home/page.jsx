@@ -1,8 +1,8 @@
 "use client";
-import "./components/homeStyle.css";
 import Input from "@/components/common/form/Input/Input";
 import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
+import { useState } from "react";
 import {
   FaCommentDots,
   FaCopy,
@@ -16,6 +16,9 @@ import {
   FaWheelchair,
 } from "react-icons/fa";
 import imagem from "../../../public/imagens/logo.png";
+import { resultado } from "./components/data";
+import "./components/homeStyle.css";
+import ResultPdf from "./components/resultPdf";
 
 const index = () => {
   //Variables
@@ -40,13 +43,13 @@ const index = () => {
 
   //Alimentacao options
   const commonOptions = [
-    { value: 1, label: "Assistência Total" },
-    { value: 2, label: "Assistência Máxima" },
-    { value: 3, label: "Assistência Moderada" },
-    { value: 4, label: "Assistência com Contato Mínimo" },
-    { value: 5, label: "Supervisão ou Preparação" },
-    { value: 6, label: "Independência Modificada" },
-    { value: 7, label: "Independência Completa" },
+    { value: 1, label: "1- Assistência Total" },
+    { value: 2, label: "2- Assistência Máxima" },
+    { value: 3, label: "3- Assistência Moderada" },
+    { value: 4, label: "4- Assistência com Contato Mínimo" },
+    { value: 5, label: "5- Supervisão ou Preparação" },
+    { value: 6, label: "6- Independência Modificada" },
+    { value: 7, label: "7- Independência Completa" },
   ];
 
   //locomocao Options
@@ -60,6 +63,65 @@ const index = () => {
     { value: 6, label: "6 - Independência Modificada" },
     { value: 7, label: "7 - Independência Completa" },
   ];
+
+  const [nome, setNome] = useState("");
+  const [idade, setIdade] = useState("");
+  const [sexo, setSexo] = useState("");
+  const [areaAtuacao, setAreaAtuacao] = useState("");
+  const [local, setLocal] = useState("");
+  const [alimentacao, setAlimentacao] = useState("");
+  const [higienePessoal, setHigienePessoal] = useState("");
+  const [banho, setBanho] = useState("");
+  const [vestirSuperior, setVestirSuperior] = useState("");
+  const [vestirInferior, setVestirInferior] = useState("");
+  const [vaso, setVaso] = useState("");
+  const [urina, setUrina] = useState("");
+  const [fezes, setFezes] = useState("");
+  const [transferenciaCadeira, setTransferenciaCadeira] = useState("");
+  const [transferenciaVaso, setTransferenciaVaso] = useState("");
+  const [transferenciaChuveiro, setTransferenciaChuveiro] = useState("");
+  const [marchaCr, setMarchaCr] = useState("");
+  const [escadas, setEscadas] = useState("");
+  const [compreensao, setCompreensao] = useState("");
+  const [expressao, setExpressao] = useState("");
+  const [interacao, setInteracao] = useState("");
+  const [resolucao, setResolucao] = useState("");
+  const [memoria, setMemoria] = useState("");
+  const [resultadoFinal, setResultadoFinal] = useState(null);
+
+  const handleResult = () => {
+    setResultadoFinal(resultado);
+  };
+
+  // const handleValues = () => {
+  //   const resultado = manipulandoInputs(
+  //     nome,
+  //     idade,
+  //     sexo,
+  //     areaAtuacao,
+  //     local,
+  //     alimentacao,
+  //     higienePessoal,
+  //     banho,
+  //     vestirSuperior,
+  //     vestirInferior,
+  //     vaso,
+  //     urina,
+  //     fezes,
+  //     transferenciaCadeira,
+  //     transferenciaVaso,
+  //     transferenciaChuveiro,
+  //     marchaCr,
+  //     escadas,
+  //     compreensao,
+  //     expressao,
+  //     interacao,
+  //     resolucao,
+  //     memoria
+  //   );
+
+  //   console.log(alimentacao);
+  // };
 
   return (
     <div className="w-100">
@@ -84,6 +146,7 @@ const index = () => {
                 label="Nome:"
                 type="text"
                 placeholder="Digite o nome"
+                onChange={({ target }) => setNome(target.value)}
               />
             </div>
             <div className="col-lg-2">
@@ -91,6 +154,7 @@ const index = () => {
                 label="Idade:"
                 type="number"
                 placeholder="Digite a idade"
+                onChange={({ target }) => setIdade(target.value)}
               />
             </div>
 
@@ -102,6 +166,7 @@ const index = () => {
                 id="sexo"
                 placeholder="Selecione"
                 options={sexoptions}
+                onChange={({ target }) => setSexo(target.value)}
               />
             </div>
             <div className="col-lg-2">
@@ -112,10 +177,16 @@ const index = () => {
                 id="sexo"
                 placeholder="Selecione"
                 options={wheelchairOptions}
+                onChange={({ target }) => setAreaAtuacao(target.value)}
               />
             </div>
             <div className="col-lg-2">
-              <Input label="Local:" type="text" placeholder="Digite o local" />
+              <Input
+                label="Local:"
+                type="text"
+                placeholder="Digite o local"
+                onChange={({ target }) => setLocal(target.value)}
+              />
             </div>
           </div>
         </div>
@@ -128,31 +199,40 @@ const index = () => {
                 </span>
               </h5>
 
-              <Select label="Alimentação:" options={commonOptions} />
+              <Select
+                label="Alimentação:"
+                options={commonOptions}
+                onChange={({ target }) => setAlimentacao(target.value)}
+              />
               <Select
                 label="Higiene pessoal:"
                 label2="Apresentação e aparência"
                 options={commonOptions}
+                onChange={({ target }) => setHigienePessoal(target.value)}
               />
               <Select
                 label="Banho"
                 label2="Lavar o corpo"
                 options={commonOptions}
+                onChange={({ target }) => setBanho(target.value)}
               />
               <Select
                 label="Vestir"
                 label2="Metade superior do corpo"
                 options={commonOptions}
+                onChange={({ target }) => setVestirSuperior(target.value)}
               />
               <Select
                 label="Vestir"
                 label2="Metade inferior do corpo"
                 options={commonOptions}
+                onChange={({ target }) => setVestirInferior(target.value)}
               />
 
               <Select
                 label="Utilização do vaso sanitário"
                 options={commonOptions}
+                onChange={({ target }) => setVaso(target.value)}
               />
             </div>
 
@@ -167,8 +247,13 @@ const index = () => {
                 label="Controle de urina"
                 label2="frequência de incontinência"
                 options={commonOptions}
+                onChange={({ target }) => setUrina(target.value)}
               />
-              <Select label="Controle das fezes" options={commonOptions} />
+              <Select
+                label="Controle das fezes"
+                options={commonOptions}
+                onChange={({ target }) => setFezes(target.value)}
+              />
             </div>
 
             <div className="caixa-form-mobilidade">
@@ -182,23 +267,23 @@ const index = () => {
                 label="Transferências:"
                 label2="leito, cadeira, cadeira de rodas"
                 options={commonOptions}
-              />
-              <Select
-                label="Transferências:"
-                label2="leito, cadeira, cadeira de rodas"
-                options={commonOptions}
+                onChange={({ target }) => setTransferenciaCadeira(target.value)}
               />
 
               <Select
                 label="Transferências:"
                 label2="Vaso sanitário"
                 options={commonOptions}
+                onChange={({ target }) => setTransferenciaVaso(target.value)}
               />
 
               <Select
                 label="Transferências:"
                 label2="Banheira ou chuveiro"
                 options={commonOptions}
+                onChange={({ target }) =>
+                  setTransferenciaChuveiro(target.value)
+                }
               />
             </div>
 
@@ -212,9 +297,14 @@ const index = () => {
               <Select
                 label="Marcha/ Cadeira de rodas:"
                 options={locomocaoOptions}
+                onChange={({ target }) => setMarchaCr(target.value)}
               />
 
-              <Select label="Escadas:" options={locomocaoOptions} />
+              <Select
+                label="Escadas:"
+                options={locomocaoOptions}
+                onChange={({ target }) => setEscadas(target.value)}
+              />
             </div>
 
             <div className="caixa-form-comunicacao">
@@ -227,7 +317,11 @@ const index = () => {
               <label>
                 <b>Compreensão</b>
               </label>
-              <select name="compreensao" id="compreensao">
+              <select
+                onChange={({ target }) => setCompreensao(target.value)}
+                name="compreensao"
+                id="compreensao"
+              >
                 <option value="0"></option>
                 <option value="1">1 - Assistência Total</option>
                 <option value="2">2 - Assistência Máxima</option>
@@ -241,7 +335,11 @@ const index = () => {
               <label>
                 <b>Expressão</b>
               </label>
-              <select name="expressao" id="expressao">
+              <select
+                onChange={({ target }) => setExpressao(target.value)}
+                name="expressao"
+                id="expressao"
+              >
                 <option value="0"></option>
                 <option value="1">1 - Assistência Total</option>
                 <option value="2">2 - Facilitação Máxima</option>
@@ -262,7 +360,11 @@ const index = () => {
               <label>
                 <b>Interação social</b>
               </label>
-              <select name="interacao-social" id="interacao-social">
+              <select
+                onChange={({ target }) => setInteracao(target.value)}
+                name="interacao-social"
+                id="interacao-social"
+              >
                 <option value="0"></option>
                 <option value="1">1 - Assistência Total</option>
                 <option value="2">2 - Orientação Máxima</option>
@@ -276,7 +378,11 @@ const index = () => {
               <label>
                 <b>Resolução de problemas</b>
               </label>
-              <select name="resolucao-de-problemas" id="resolucao-de-problemas">
+              <select
+                onChange={({ target }) => setResolucao(target.value)}
+                name="resolucao-de-problemas"
+                id="resolucao-de-problemas"
+              >
                 <option value="0"></option>
                 <option value="1">1 - Orientação Total</option>
                 <option value="2">2 - Orientação Máxima</option>
@@ -290,7 +396,11 @@ const index = () => {
               <label>
                 <b>Memória</b>
               </label>
-              <select name="memoria" id="memoria">
+              <select
+                onChange={({ target }) => setMemoria(target.value)}
+                name="memoria"
+                id="memoria"
+              >
                 <option value="0"></option>
                 <option value="1">1 - Assistência Total</option>
                 <option value="2">2 - Facilitação Máxima</option>
@@ -304,7 +414,9 @@ const index = () => {
           </form>
 
           <div className="caixa-resultados">
-            <div className="texto-resultado">Nenhum resultado.</div>
+            <div className="texto-resultado">
+              <pre>{<ResultPdf />}</pre>
+            </div>
           </div>
         </div>
 
