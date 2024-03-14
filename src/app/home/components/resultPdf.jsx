@@ -21,7 +21,7 @@ const ResultPdf = ({
               areaAtuacao ? areaAtuacao : "[Area de atuação ]"
             }.`}
           </p>
-          <p>
+          <p className="justify">
             Aplicada a avaliação padronizada de Medida de Independência
             Funcional, com objetivo de avaliar o desempenho da paciente durante
             a realização das atividades cotidianas. De acordo com a Medida de

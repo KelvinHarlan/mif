@@ -432,17 +432,12 @@ const index = () => {
         </div>
 
         <div className="botao-enviar m-4 d-flex gap-2">
-          <div className="btn-desk">
-            <button
-              onClick={handleResult}
-              className="btn bg-success text-white"
-            >
-              Enviar
-              <i className="text-white">
-                <FaPaperPlane />
-              </i>
-            </button>
-          </div>
+          <button onClick={handleResult} className="btn bg-success text-white">
+            Enviar
+            <i className="text-white">
+              <FaPaperPlane />
+            </i>
+          </button>
 
           <button className="btn bg-white border">
             <FaRegTrashAlt />
