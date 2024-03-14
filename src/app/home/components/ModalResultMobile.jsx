@@ -19,7 +19,7 @@ const ModalResultMobile = ({
   };
   //Component
   return (
-    <div>
+    <div className="modal-result-mobile">
       {enviado && (
         <div
           className="modal"

@@ -102,6 +102,13 @@ const index = () => {
     setBanho(banhoResult(banho));
   };
 
+  const handleResultMobile = () => {
+    seteEnviado(true);
+    setAlimentacao(alimentacaoResult(alimentacao));
+    setHigienePessoal(higienePessoalResult(higienePessoal));
+    setBanho(banhoResult(banho));
+  };
+
   return (
     <div className="w-100">
       <ModalResultMobile
@@ -425,12 +432,18 @@ const index = () => {
         </div>
 
         <div className="botao-enviar m-4 d-flex gap-2">
-          <button onClick={handleResult} className="btn bg-success text-white">
-            Enviar
-            <i className="text-white">
-              <FaPaperPlane />
-            </i>
-          </button>
+          <div className="btn-desk">
+            <button
+              onClick={handleResult}
+              className="btn bg-success text-white"
+            >
+              Enviar
+              <i className="text-white">
+                <FaPaperPlane />
+              </i>
+            </button>
+          </div>
+
           <button className="btn bg-white border">
             <FaRegTrashAlt />
           </button>

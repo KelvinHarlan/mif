@@ -219,6 +219,10 @@ select{
 
 @media (min-width: 1024px) {
 
+
+    .modal-result-mobile{
+        display: none;
+    }
     .container-resul{
         text-align: justify;
     }
