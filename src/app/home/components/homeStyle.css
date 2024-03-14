@@ -20,6 +20,10 @@ select{
         scroll-behavior: smooth;
     }
 
+    .container-resul{
+        text-align: justify;
+    }
+
     .textoSemCss{
         display: none;
     }
@@ -214,6 +218,10 @@ select{
 
 
 @media (min-width: 1024px) {
+
+    .container-resul{
+        text-align: justify;
+    }
 
     .titulos-cards{
         background-color: #271d77;
