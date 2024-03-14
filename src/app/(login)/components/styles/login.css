@@ -8,12 +8,17 @@
 .container-login input {
   border: none !important;
   background-color: #fff !important;
+  
+}
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px white inset; 
 }
 
 textarea:focus, input:focus, select:focus {
-  box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 30px white inset;
   border: 0 none;
   outline: 0;
+  background-color: ;
 } 
 
 body{
