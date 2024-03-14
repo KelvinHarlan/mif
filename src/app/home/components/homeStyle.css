@@ -22,6 +22,7 @@ select{
 
     .container-resul{
         text-align: justify;
+        margin-bottom: 5vh;
     }
 
     .textoSemCss{
@@ -124,6 +125,7 @@ select{
         width: 100vw ;
         border-radius: 5px 5px 0 0 ;
         box-shadow: 2px 0 5px #c0c0c0;
+        z-index: 9999;
     }
 
     .enviar {
