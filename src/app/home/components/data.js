@@ -1,125 +1,144 @@
-let alimentacao;
-let higiene;
-let banho;
-let vestirSuperior;
-let vestirInferior;
-let vasoSanitario;
-let controleUrina;
-let controleFezes;
-let transferenciaLeito;
-let transferenciaVaso;
-let transferenciaBanheira;
-let marchaCadeira;
-let escadas;
-let compreensao;
-let expressao;
-let interacao;
-let resolucao;
-let memoria;
-let cadeirante = "sim";
-
-
-
-
-export function manipulandoInputs(
-  alimentacao,
-  higiene,
-  banho,
-  vestirSuperior,
-  vestirInferior,
-  vasoSanitario,
-  controleUrina,
-  controleFezes,
-  transferenciaLeito,
-  transferenciaVaso,
-  transferenciaBanheira,
-  marchaCadeira,
-  escadas,
-  compreensao,
-  expressao,
-  interacao,
-  resolucao,
-  memoria
-) {
+const alimentacaoResult = (alimentacao) => {
   if (alimentacao === "1") {
-    /*Alimentsção*/
-    alimentacao =
-      "<b>Alimentação:</b> Assistência Total - A pessoa executa menos de 25% das tarefas.";
+    return {
+      area: "Alimentação:",
+      value: "Assistência Total - A pessoa executa menos de 25% das tarefas.",
+    };
   } else if (alimentacao === "2") {
-    alimentacao =
-      "<b>Alimentação:</b> Assistência Máxima - A pessoa executa 25 a 49% das tarefas de alimentação.";
+    return {
+      area: "Alimentação:",
+      value:
+        "Assistência Máxima - A pessoa executa 25 a 49% das tarefas de alimentação.",
+    };
   } else if (alimentacao === "3") {
-    alimentacao =
-      "<b>Alimentação:</b> Assistência Moderada - A pessoa executa 50 a 74% das tarefas de alimentação.";
+    return {
+      area: "Alimentação:",
+      value:
+        "Assistência Moderada - A pessoa executa 50 a 74% das tarefas de alimentação.",
+    };
   } else if (alimentacao === "4") {
-    alimentacao =
-      "<b>Alimentação:</b> Assistência com Contato Mínimo - É preciso apenas tocar a pessoa em auxílio para realização das tarefas. A pessoa executa 75% ou mais das tarefas.";
+    return {
+      area: "Alimentação:",
+      value:
+        "Assistência com Contato Mínimo - É preciso apenas tocar a pessoa em auxílio para realização das tarefas. A pessoa executa 75% ou mais das tarefas.",
+    };
   } else if (alimentacao === "5") {
-    alimentacao =
-      "<b>Alimentação:</b> Supervisão ou Preparação - Necessita de supervisão ou de preparação para realização da atividade, sem contato físico.";
+    return {
+      area: "Alimentação:",
+      value:
+        "Supervisão ou Preparação - Necessita de supervisão ou de preparação para realização da atividade, sem contato físico.",
+    };
   } else if (alimentacao === "6") {
-    alimentacao =
-      "<b>Alimentação:</b> Independência Modificada - Necessita de um dispositivo de adaptação ou exige cuidados de segurança no ato de comer.";
+    return {
+      area: "Alimentação:",
+      value:
+        "Independência Modificada - Necessita de um dispositivo de adaptação ou exige cuidados de segurança no ato de comer.",
+    };
   } else if (alimentacao === "7") {
-    alimentacao =
-      "<b>Alimentação:</b> Independência Completa - A pessoa realiza todas as tarefas de forma independente, com segurança.";
-  } else if (alimentacao === "0") {
-    alimentacao = 'Dado ( <b class = "red">Alimentação:</b> ) está em branco!';
+    return {
+      area: "Alimentação:",
+      value:
+        "Independência Completa - A pessoa realiza todas as tarefas de forma independente, com segurança.",
+    };
   }
+  //end
+  else return;
+};
 
+const higienePessoalResult = (higiene) => {
   if (higiene === "1") {
-    /*Higiene Pessoal*/
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Assistência Total - A pessoa executa menos de 25% das tarefas.";
+    return {
+      area: "Higiene Pessoal:",
+      value: "Assistência Total - A pessoa executa menos de 25% das tarefas.",
+    };
   } else if (higiene === "2") {
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Assistência Máxima - A pessoa executa 25 a 49% das tarefas.";
+    return {
+      area: "Higiene Pessoal:",
+      value: "Assistência Máxima - A pessoa executa 25 a 49% das tarefas.",
+    };
   } else if (higiene === "3") {
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Assistência Moderada - A pessoa executa 50 a 74% das tarefas.";
+    return {
+      area: "Higiene Pessoal:",
+      value: "Assistência Moderada - A pessoa executa 50 a 74% das tarefas.",
+    };
   } else if (higiene === "4") {
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Assistência com Contato Mínimo - É preciso apenas tocar a pessoa em auxílio para realização das tarefas. A pessoa executa 75% ou mais das tarefas.";
+    return {
+      area: "Higiene Pessoal:",
+      value:
+        "Assistência com Contato Mínimo - É preciso apenas tocar a pessoa em auxílio para realização das tarefas. A pessoa executa 75% ou mais das tarefas.",
+    };
   } else if (higiene === "5") {
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Supervisão ou Preparação - Exige supervisão ou preparação para realização da atividade, sem contato físico.";
+    return {
+      area: "Higiene Pessoal:",
+      value:
+        "Exige supervisão ou preparação para realização da atividade, sem contato físico.",
+    };
   } else if (higiene === "6") {
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Independência Modificada - Precisa de equipamento especializado, demanda mais tempo que razoável ou exige cuidados de segurança.";
+    return {
+      area: "Higiene Pessoal:",
+      value:
+        "Independência Modificada - Precisa de equipamento especializado, demanda mais tempo que razoável ou exige cuidados de segurança.",
+    };
   } else if (higiene === "7") {
-    higiene =
-      "<b>Higiene Pessoal (apresentação e aparência):</b> Independência Completa - Limpa os dentes ou dentadura, pentea o cabelo, lava as mãos e rosto, barbeia-se ou maquia-se incluindo os preparativos, com segurança.";
-  } else if (higiene === "0") {
-    higiene =
-      'Dado ( <b class = "red">Higiene pessoal: Apresentação e Aparência:</b> ) está em branco!';
+    return {
+      area: "Higiene Pessoal:",
+      value:
+        "Independência Completa - Limpa os dentes ou dentadura, pentea o cabelo, lava as mãos e rosto, barbeia-se ou maquia-se incluindo os preparativos, com segurança.",
+    };
   }
 
+  //end
+  else return;
+};
+
+const banhoResult = (banho) => {
   if (banho === "1") {
-    /*Banho: lavar o corpo*/
-    banho =
-      "<b>Banho:</b> Assistência Total - A pessoa executa menos de 25% das tarefas.";
+    return {
+      area: "Banho: Lavar o corpo",
+      value: "Assistência Total - A pessoa executa menos de 25% das tarefas.",
+    };
   } else if (banho === "2") {
-    banho =
-      "<b>Banho:</b> Assistência Máxima - A pessoa executa 25 a 49% das tarefas.";
+    return {
+      area: "Banho: Lavar o corpo:",
+      value: "Assistência Máxima - A pessoa executa 25 a 49% das tarefas.",
+    };
   } else if (banho === "3") {
-    banho =
-      "<b>Banho:</b> Assistência Moderada - A pessoa executa 50 a 74% das tarefas.";
+    return {
+      area: "Banho: Lavar o corpo:",
+      value: "Assistência Moderada - A pessoa executa 50 a 74% das tarefas.",
+    };
   } else if (banho === "4") {
-    banho =
-      "<b>Banho:</b> Assistência com Contato Mínimo - É preciso apenas tocar a pessoa em auxílio para realização das tarefas. A pessoa executa 75% ou mais das tarefas.";
+    return {
+      area: "Banho: Lavar o corpo:",
+      value:
+        "Assistência com Contato Mínimo - É preciso apenas tocar a pessoa em auxílio para realização das tarefas. A pessoa executa 75% ou mais das tarefas.",
+    };
   } else if (banho === "5") {
-    banho =
-      "<b>Banho:</b> Supervisão ou Preparação - Exige supervisão ou preparação para realização da atividade, sem contato físico.";
+    return {
+      area: "Banho: Lavar o corpo:",
+      value:
+        "Supervisão ou Preparação - Exige supervisão ou preparação para realização da atividade, sem contato físico.",
+    };
   } else if (banho === "6") {
-    banho =
-      "<b>Banho:</b> Independência Modificada - Precisa de equipamento especializado, demanda mais tempo que razoável ou exige cuidados de segurança.";
+    return {
+      area: "Banho: Lavar o corpo:",
+      value:
+        "Independência Modificada - Precisa de equipamento especializado, demanda mais tempo que razoável ou exige cuidados de segurança.",
+    };
   } else if (banho === "7") {
-    banho =
-      "<b>Banho:</b> Independência Completa - Lava e seca o corpo com segurança.";
-  } else if (banho === "0") {
-    banho = 'Dado ( <b class = "red">Banho:</b> ) está em branco!';
+    return {
+      area: "Banho: Lavar o corpo:",
+      value: "Independência Completa - Lava e seca o corpo com segurança.",
+    };
   }
 
+  //End
+  else return;
+};
+
+export { alimentacaoResult, higienePessoalResult, banhoResult };
+
+export function manipulandoInputs() {
   if (vestirSuperior === "1") {
     /*Vestir metade superior do corpo*/
     vestirSuperior =

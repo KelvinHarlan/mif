@@ -16,7 +16,11 @@ import {
   FaWheelchair,
 } from "react-icons/fa";
 import imagem from "../../../public/imagens/logo.png";
-import { resultado } from "./components/data";
+import {
+  alimentacaoResult,
+  banhoResult,
+  higienePessoalResult,
+} from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
 
@@ -88,40 +92,14 @@ const index = () => {
   const [resolucao, setResolucao] = useState("");
   const [memoria, setMemoria] = useState("");
   const [resultadoFinal, setResultadoFinal] = useState(null);
+  const [enviado, seteEnviado] = useState(false);
 
   const handleResult = () => {
-    setResultadoFinal(resultado);
+    seteEnviado(true);
+    setAlimentacao(alimentacaoResult(alimentacao));
+    setHigienePessoal(higienePessoalResult(higienePessoal));
+    setBanho(banhoResult(banho));
   };
-
-  // const handleValues = () => {
-  //   const resultado = manipulandoInputs(
-  //     nome,
-  //     idade,
-  //     sexo,
-  //     areaAtuacao,
-  //     local,
-  //     alimentacao,
-  //     higienePessoal,
-  //     banho,
-  //     vestirSuperior,
-  //     vestirInferior,
-  //     vaso,
-  //     urina,
-  //     fezes,
-  //     transferenciaCadeira,
-  //     transferenciaVaso,
-  //     transferenciaChuveiro,
-  //     marchaCr,
-  //     escadas,
-  //     compreensao,
-  //     expressao,
-  //     interacao,
-  //     resolucao,
-  //     memoria
-  //   );
-
-  //   console.log(alimentacao);
-  // };
 
   return (
     <div className="w-100">
@@ -129,8 +107,8 @@ const index = () => {
         <div className="titulo">
           <Image
             src={imagem}
-            width={250}
-            height={90}
+            width={150}
+            height={54}
             alt="Logo"
             priority={true}
           />
@@ -211,53 +189,53 @@ const index = () => {
                 onChange={({ target }) => setHigienePessoal(target.value)}
               />
               <Select
-                label="Banho"
+                label="Banho:"
                 label2="Lavar o corpo"
                 options={commonOptions}
                 onChange={({ target }) => setBanho(target.value)}
               />
               <Select
-                label="Vestir"
+                label="Vestir:"
                 label2="Metade superior do corpo"
                 options={commonOptions}
                 onChange={({ target }) => setVestirSuperior(target.value)}
               />
               <Select
-                label="Vestir"
+                label="Vestir:"
                 label2="Metade inferior do corpo"
                 options={commonOptions}
                 onChange={({ target }) => setVestirInferior(target.value)}
               />
 
               <Select
-                label="Utilização do vaso sanitário"
+                label="Utilização do vaso sanitário:"
                 options={commonOptions}
                 onChange={({ target }) => setVaso(target.value)}
               />
             </div>
 
             <div className="caixa-form-controleEsfincteres">
-              <h5 className="controleDeEsfincter">
+              <h5 className="controleDeEsfincter:">
                 <span className="titulos-cards">
                   Controle de esfíncteres <FaToilet />
                 </span>
               </h5>
 
               <Select
-                label="Controle de urina"
+                label="Controle de urina:"
                 label2="frequência de incontinência"
                 options={commonOptions}
                 onChange={({ target }) => setUrina(target.value)}
               />
               <Select
-                label="Controle das fezes"
+                label="Controle das fezes:"
                 options={commonOptions}
                 onChange={({ target }) => setFezes(target.value)}
               />
             </div>
 
             <div className="caixa-form-mobilidade">
-              <h5 className="mobilidade ">
+              <h5 className="mobilidade">
                 <span className="titulos-cards">
                   Mobilidade <FaRunning />
                 </span>
@@ -288,7 +266,7 @@ const index = () => {
             </div>
 
             <div className="caixa-form-locomocao">
-              <h5 className="locomocao ">
+              <h5 className="locomocao:">
                 <span className="titulos-cards">
                   Locomoção <FaWheelchair />
                 </span>
@@ -315,7 +293,7 @@ const index = () => {
               </h5>
 
               <label>
-                <b>Compreensão</b>
+                <b>Compreensão:</b>
               </label>
               <select
                 onChange={({ target }) => setCompreensao(target.value)}
@@ -333,7 +311,7 @@ const index = () => {
               </select>
 
               <label>
-                <b>Expressão</b>
+                <b>Expressão:</b>
               </label>
               <select
                 onChange={({ target }) => setExpressao(target.value)}
@@ -354,11 +332,12 @@ const index = () => {
             <div className="caixa-form-conhecimento-social">
               <h5 className="conhecimento-social">
                 <span className="titulos-cards">
-                  Conhecimento Social <FaPuzzlePiece />
+                  Conhecimento Social
+                  <FaPuzzlePiece />
                 </span>
               </h5>
               <label>
-                <b>Interação social</b>
+                <b>Interação social:</b>
               </label>
               <select
                 onChange={({ target }) => setInteracao(target.value)}
@@ -376,7 +355,7 @@ const index = () => {
               </select>
 
               <label>
-                <b>Resolução de problemas</b>
+                <b>Resolução de problemas:</b>
               </label>
               <select
                 onChange={({ target }) => setResolucao(target.value)}
@@ -394,7 +373,7 @@ const index = () => {
               </select>
 
               <label>
-                <b>Memória</b>
+                <b>Memória:</b>
               </label>
               <select
                 onChange={({ target }) => setMemoria(target.value)}
@@ -415,14 +394,26 @@ const index = () => {
 
           <div className="caixa-resultados">
             <div className="texto-resultado">
-              <pre>{<ResultPdf />}</pre>
+              {
+                <ResultPdf
+                  alimentacao={alimentacao}
+                  higienePessoal={higienePessoal}
+                  enviado={enviado}
+                  nome={nome}
+                  idade={idade}
+                  sexo={sexo}
+                  areaAtuacao={areaAtuacao}
+                  local={local}
+                  banho={banho}
+                />
+              }
             </div>
           </div>
         </div>
 
         <div className="botao-enviar m-4 d-flex gap-2">
-          <button className="btn bg-success text-white">
-            Enviar{" "}
+          <button onClick={handleResult} className="btn bg-success text-white">
+            Enviar
             <i className="text-white">
               <FaPaperPlane />
             </i>
