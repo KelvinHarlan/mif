@@ -23,6 +23,7 @@ import {
 } from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
+import ModalResultMobile from "./components/ModalResultMobile";
 
 const index = () => {
   //Variables
@@ -103,6 +104,18 @@ const index = () => {
 
   return (
     <div className="w-100">
+      <ModalResultMobile
+        enviado={enviado}
+        alimentacao={alimentacao}
+        higienePessoal={higienePessoal}
+        nome={nome}
+        idade={idade}
+        sexo={sexo}
+        areaAtuacao={areaAtuacao}
+        local={local}
+        banho={banho}
+        seteEnviado={seteEnviado}
+      />
       <div className="container p-1">
         <div className="titulo">
           <Image
