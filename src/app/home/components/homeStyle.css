@@ -1,17 +1,19 @@
-input, select{
+ input, select{
     background-color: #f7f7f7  !important;
     text-indent: 10px;
-    -webkit-appearance: none; /* Safari e Chrome */
-    -moz-appearance: none; /* Firefox */
-    appearance: none; /* Outros navegadores */
+   
     border: 1px solid #e7e7e7 !important;   
     border-radius: 5px !important;
     min-height: 40px;
     max-height: 40px;   
 }
 
+
 select{
     padding: 10px !important;
+    -webkit-appearance: none; /* Safari e Chrome */
+    -moz-appearance: none; /* Firefox */
+    appearance: none; /* Outros navegadores */
 }
 
 /*Start mobile*/
@@ -56,11 +58,18 @@ select{
         padding-top: 2vh;
         margin-bottom: 2vh;
         background-color:#fff;
-        border-radius: 20px 20px 5px 5px;
+        border-radius:5px;
         box-shadow: #e7e7e7;
         padding: 10px;
         box-shadow: 0px 0px 5px #d6d6d6;
-       
+    }
+
+    .check-cadeirante{
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        
     }
 
 
@@ -202,7 +211,10 @@ select{
 /*Start Desk*/
 @media (min-width: 1024px) {
 
-
+    .check-cadeirante{
+      margin-left: 5px;
+        
+    }
     .modal-result-mobile{
         display: none;
     }
@@ -270,6 +282,8 @@ select{
         font-weight: 500;
         background-color: #fff;
         border-radius: 5px;
+        flex-wrap: wrap;
+        
         
     }
 

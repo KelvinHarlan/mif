@@ -99,7 +99,7 @@ const higienePessoalResult = (higiene) => {
     return {
       area: "Higiene Pessoal:",
       value:
-        "Independência Completa - Limpa os dentes ou dentadura, pentea o cabelo, lava as mãos e rosto, barbeia-se ou maquia-se incluindo os preparativos, com segurança.",
+        "Independência Completa - Limpa os dentes ou dentadura, penteia o cabelo, lava as mãos e rosto, barbeia-se ou maquia-se incluindo os preparativos, com segurança.",
     };
   }
 
@@ -368,7 +368,7 @@ const controleFezesResult = (controleFezes) => {
     return {
       area: "Controle das fezes:",
       value:
-        "Supervisão ou preparo - Necessita de supervisão ou de preparação do equipamento mecessário para manter um padrão satisfatório de defecação. Pode haver acidentes ocasionais menos de uma vez por mês.",
+        "Supervisão ou preparo - Necessita de supervisão ou de preparação do equipamento necessário para manter um padrão satisfatório de defecação. Pode haver acidentes ocasionais menos de uma vez por mês.",
     };
   } else if (controleFezes === "6") {
     return {
@@ -592,7 +592,7 @@ const marchaCadeiraResult = (marchaCadeira, cadeirante) => {
     return {
       area: "Marcha/ Cadeira de rodas:",
       value:
-        "Independência Modificada - Se a pessoa anda...Anda pelo menos 50 metros, mas usa órtese ou prótese em membro inferior, sapatos especiais, bengala, muletas ou andadores. Leva um tempo acima do razoável ou há riscos de segurança.",
+        "Independência Modificada - Se a pessoa anda... anda pelo menos 50 metros, mas usa órtese ou prótese em membro inferior, sapatos especiais, bengala, muletas ou andadores. Leva um tempo acima do razoável ou há riscos de segurança.",
     };
   } else if (marchaCadeira === "7") {
     return {

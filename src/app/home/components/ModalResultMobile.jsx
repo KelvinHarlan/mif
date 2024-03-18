@@ -1,6 +1,9 @@
 "use client";
 
+import { FaCopy } from "react-icons/fa";
 import ResultPdf from "./resultPdf";
+import { useRef } from "react";
+import { toast } from "react-toastify";
 
 const ModalResultMobile = ({
   enviado,
@@ -28,10 +31,30 @@ const ModalResultMobile = ({
   resolucao,
   memoria,
   seteEnviado,
+  acompanhante,
 }) => {
   const handleClosed = () => {
     seteEnviado(false);
   };
+
+  const componentRefMobile = useRef(null);
+
+  const copyTextResult = () => {
+    if (componentRefMobile.current) {
+      const textoDoComponente = componentRefMobile.current.innerText;
+      navigator.clipboard
+        .writeText(textoDoComponente)
+        .then(() => {
+          toast.success("Copiado com sucesso!");
+        })
+        .catch((error) => {
+          console.error("Erro ao copiar o texto do componente:", error);
+        });
+    } else {
+      toast.error("Não há texto para copiar.");
+    }
+  };
+
   //Component
   return (
     <div className="modal-result-mobile">
@@ -59,33 +82,46 @@ const ModalResultMobile = ({
               </div>
 
               {/*End Basic Data*/}
-              <div className="modal-body">
-                <ResultPdf
-                  alimentacao={alimentacao}
-                  higienePessoal={higienePessoal}
-                  enviado={enviado}
-                  nome={nome}
-                  idade={idade}
-                  sexo={sexo}
-                  areaAtuacao={areaAtuacao}
-                  local={local}
-                  banho={banho}
-                  vestirSuperior={vestirSuperior}
-                  vestirInferior={vestirInferior}
-                  vaso={vaso}
-                  urina={urina}
-                  fezes={fezes}
-                  transferenciaCadeira={transferenciaCadeira}
-                  transferenciaVaso={transferenciaVaso}
-                  transferenciaChuveiro={transferenciaChuveiro}
-                  marchaCr={marchaCr}
-                  escadas={escadas}
-                  compreensao={compreensao}
-                  expressao={expressao}
-                  interacao={interacao}
-                  resolucao={resolucao}
-                  memoria={memoria}
-                />
+              <div ref={componentRefMobile} className="modal-body">
+                <div>
+                  <ResultPdf
+                    alimentacao={alimentacao}
+                    higienePessoal={higienePessoal}
+                    enviado={enviado}
+                    nome={nome}
+                    idade={idade}
+                    sexo={sexo}
+                    areaAtuacao={areaAtuacao}
+                    local={local}
+                    banho={banho}
+                    vestirSuperior={vestirSuperior}
+                    vestirInferior={vestirInferior}
+                    vaso={vaso}
+                    urina={urina}
+                    fezes={fezes}
+                    transferenciaCadeira={transferenciaCadeira}
+                    transferenciaVaso={transferenciaVaso}
+                    transferenciaChuveiro={transferenciaChuveiro}
+                    marchaCr={marchaCr}
+                    escadas={escadas}
+                    compreensao={compreensao}
+                    expressao={expressao}
+                    interacao={interacao}
+                    resolucao={resolucao}
+                    memoria={memoria}
+                    acompanhante={acompanhante}
+                  />
+                </div>
+                <div className="d-flex justify-content-center">
+                  <button
+                    onClick={copyTextResult}
+                    style={{ backgroundColor: "#271d77" }}
+                    className="btn bg-white border"
+                  >
+                    <span>Copiar </span>
+                    <FaCopy />
+                  </button>
+                </div>
                 {/*End Form*/}
               </div>
               {/*End Modal Body*/}

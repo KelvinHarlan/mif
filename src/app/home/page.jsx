@@ -2,7 +2,7 @@
 import Input from "@/components/common/form/Input/Input";
 import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   FaCommentDots,
   FaCopy,
@@ -39,6 +39,8 @@ import {
 } from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
+import { toast } from "react-toastify";
+import ModalClear from "./components/ModalClear/ModalClear";
 
 const index = () => {
   //Variables
@@ -90,7 +92,9 @@ const index = () => {
   const [sexo, setSexo] = useState("");
   const [areaAtuacao, setAreaAtuacao] = useState("");
   const [local, setLocal] = useState("");
-  const [cadeirante, setCadeirante] = useState(true);
+  const [cadeirante, setCadeirante] = useState(false);
+  const [acompanhante, setAcompanhante] = useState(false);
+  const [isModalClosed, setIsModalClosed] = useState(false);
 
   //Selects
   const [alimentacao, setAlimentacao] = useState("");
@@ -135,6 +139,7 @@ const index = () => {
   //Send
   const [enviado, seteEnviado] = useState(false);
 
+  //Handle Result
   const handleResult = () => {
     seteEnviado(true);
     setAlimentacaoB(alimentacaoResult(alimentacao));
@@ -161,10 +166,89 @@ const index = () => {
     setInteracaoB(interacaoResult(interacao));
     setResolucaoB(resolucaoResult(resolucao));
     setMemoriaB(memoriaResult(memoria));
+    toast.success("Resultado calculado com sucesso!", { autoClose: 1000 });
   };
 
+  //Handle Cadeirante
+  const handleCheckCadeirante = () => {
+    setCadeirante(!cadeirante);
+  };
+  //Handle acompanhante
+  const handleCheckAcompanhante = () => {
+    setAcompanhante(!acompanhante);
+  };
+
+  //handle Print
+  const handlePrint = () => {
+    window.print();
+  };
+
+  //Handle Clear
+  const clear = () => {
+    setNome("");
+    setIdade("");
+    setSexo("");
+    setAreaAtuacao("");
+    setLocal("");
+    setCadeirante(false);
+    setAcompanhante(false);
+    setAlimentacao("");
+    setHigienePessoal("");
+    setBanho("");
+    setVestirSuperior("");
+    setVestirInferior("");
+    setVaso("");
+    setUrina("");
+    setFezes("");
+    setTransferenciaCadeira("");
+    setTransferenciaVaso("");
+    setTransferenciaChuveiro("");
+    setMarchaCr("");
+    setEscadas("");
+    setCompreensao("");
+    setExpressao("");
+    setInteracao("");
+    setResolucao("");
+    setMemoria("");
+
+    setIsModalClosed(false);
+    seteEnviado(false);
+    toast.success("Apagado com sucesso!", {
+      autoClose: 1000,
+    });
+  };
+
+  //handle closed Modal clear
+  const handleClosedModal = () => {
+    setIsModalClosed(true);
+  };
+
+  const componenteRef = useRef(null);
+
+  const copyTextResult = () => {
+    if (componenteRef.current) {
+      const textoDoComponente = componenteRef.current.innerText;
+      navigator.clipboard
+        .writeText(textoDoComponente)
+        .then(() => {
+          toast.success("Texto copiado com sucesso!", { autoClose: 1000 });
+        })
+        .catch((error) => {
+          console.error("Erro ao copiar o texto do componente:", error);
+        });
+    } else {
+      toast.error("Não há texto para copiar");
+    }
+  };
+
+  //Component ##########################################################
   return (
     <div className="w-100">
+      <ModalClear
+        isModalClosed={isModalClosed}
+        setIsModalClosed={setIsModalClosed}
+        clear={clear}
+      />
       <ModalResultMobile
         enviado={enviado}
         alimentacao={alimentacaoB}
@@ -190,6 +274,7 @@ const index = () => {
         interacao={interacaoB}
         resolucao={resolucaoB}
         memoria={memoriaB}
+        acompanhante={acompanhante}
         seteEnviado={seteEnviado}
       />
       <div className="container p-1">
@@ -209,6 +294,7 @@ const index = () => {
           <div className="caixa-nome-idade">
             <div className="col-lg-4">
               <Input
+                value={nome}
                 className="col-lg-12"
                 label="Nome:"
                 type="text"
@@ -218,15 +304,16 @@ const index = () => {
             </div>
             <div className="col-lg-2">
               <Input
+                value={idade}
                 label="Idade:"
                 type="number"
                 placeholder="Digite a idade"
                 onChange={({ target }) => setIdade(target.value)}
               />
             </div>
-
             <div className="col-lg-2">
               <Select
+                value={sexo}
                 label="Sexo:"
                 className="text-secondary p-1"
                 name="sexo"
@@ -238,6 +325,7 @@ const index = () => {
             </div>
             <div className="col-lg-2">
               <Select
+                value={areaAtuacao}
                 label="Área de atuação:"
                 className="text-secondary p-1"
                 name="sexo"
@@ -249,6 +337,7 @@ const index = () => {
             </div>
             <div className="col-lg-2">
               <Input
+                value={local}
                 label="Local:"
                 type="text"
                 placeholder="Digite o local"
@@ -256,7 +345,27 @@ const index = () => {
               />
             </div>
           </div>
+          {/* CheckBox ####################################################*/}
+          <div className="check-cadeirante d-flex gap-4">
+            <div className="select-cadeirante d-flex gap-1 align-items-center">
+              <h6 className="m-0">Cadeirante:</h6>{" "}
+              <input
+                type="checkbox"
+                checked={cadeirante}
+                onChange={handleCheckCadeirante}
+              />
+            </div>
+            <div className="select-cadeirante d-flex gap-1 align-items-center">
+              <h6 className="m-0">Acompanhante:</h6>{" "}
+              <input
+                type="checkbox"
+                checked={acompanhante}
+                onChange={handleCheckAcompanhante}
+              />
+            </div>
+          </div>
         </div>
+
         <div className="form-grupo">
           <form className="caixa-formulario">
             <div className="caixa-form-autoCuidado">
@@ -265,38 +374,42 @@ const index = () => {
                   Autocuidado <FaUtensils />
                 </span>
               </h5>
-
               <Select
+                value={alimentacao}
                 label="Alimentação:"
                 options={commonOptions}
                 onChange={({ target }) => setAlimentacao(target.value)}
               />
               <Select
+                value={higienePessoal}
                 label="Higiene pessoal:"
                 label2="Apresentação e aparência"
                 options={commonOptions}
                 onChange={({ target }) => setHigienePessoal(target.value)}
               />
               <Select
+                value={banho}
                 label="Banho:"
                 label2="Lavar o corpo"
                 options={commonOptions}
                 onChange={({ target }) => setBanho(target.value)}
               />
               <Select
+                value={vestirSuperior}
                 label="Vestir:"
                 label2="Metade superior do corpo"
                 options={commonOptions}
                 onChange={({ target }) => setVestirSuperior(target.value)}
               />
               <Select
+                value={vestirInferior}
                 label="Vestir:"
                 label2="Metade inferior do corpo"
                 options={commonOptions}
                 onChange={({ target }) => setVestirInferior(target.value)}
               />
-
               <Select
+                value={vaso}
                 label="Utilização do vaso sanitário:"
                 options={commonOptions}
                 onChange={({ target }) => setVaso(target.value)}
@@ -311,12 +424,14 @@ const index = () => {
               </h5>
 
               <Select
+                value={urina}
                 label="Controle de urina:"
                 label2="frequência de incontinência"
                 options={commonOptions}
                 onChange={({ target }) => setUrina(target.value)}
               />
               <Select
+                value={fezes}
                 label="Controle das fezes:"
                 options={commonOptions}
                 onChange={({ target }) => setFezes(target.value)}
@@ -331,6 +446,7 @@ const index = () => {
               </h5>
 
               <Select
+                value={transferenciaCadeira}
                 label="Transferências:"
                 label2="leito, cadeira, cadeira de rodas"
                 options={commonOptions}
@@ -338,6 +454,7 @@ const index = () => {
               />
 
               <Select
+                value={transferenciaVaso}
                 label="Transferências:"
                 label2="Vaso sanitário"
                 options={commonOptions}
@@ -345,6 +462,7 @@ const index = () => {
               />
 
               <Select
+                value={transferenciaChuveiro}
                 label="Transferências:"
                 label2="Banheira ou chuveiro"
                 options={commonOptions}
@@ -362,12 +480,14 @@ const index = () => {
               </h5>
 
               <Select
+                value={marchaCr}
                 label="Marcha/ Cadeira de rodas:"
                 options={locomocaoOptions}
                 onChange={({ target }) => setMarchaCr(target.value)}
               />
 
               <Select
+                value={escadas}
                 label="Escadas:"
                 options={locomocaoOptions}
                 onChange={({ target }) => setEscadas(target.value)}
@@ -385,6 +505,7 @@ const index = () => {
                 <b>Compreensão:</b>
               </label>
               <select
+                value={compreensao}
                 onChange={({ target }) => setCompreensao(target.value)}
                 name="compreensao"
                 id="compreensao"
@@ -403,6 +524,7 @@ const index = () => {
                 <b>Expressão:</b>
               </label>
               <select
+                value={expressao}
                 onChange={({ target }) => setExpressao(target.value)}
                 name="expressao"
                 id="expressao"
@@ -429,6 +551,7 @@ const index = () => {
                 <b>Interação social:</b>
               </label>
               <select
+                value={interacao}
                 onChange={({ target }) => setInteracao(target.value)}
                 name="interacao-social"
                 id="interacao-social"
@@ -447,6 +570,7 @@ const index = () => {
                 <b>Resolução de problemas:</b>
               </label>
               <select
+                value={resolucao}
                 onChange={({ target }) => setResolucao(target.value)}
                 name="resolucao-de-problemas"
                 id="resolucao-de-problemas"
@@ -465,6 +589,7 @@ const index = () => {
                 <b>Memória:</b>
               </label>
               <select
+                value={memoria}
                 onChange={({ target }) => setMemoria(target.value)}
                 name="memoria"
                 id="memoria"
@@ -481,7 +606,7 @@ const index = () => {
             </div>
           </form>
 
-          <div className="caixa-resultados">
+          <div ref={componenteRef} className="caixa-resultados">
             <div className="texto-resultado">
               {
                 <ResultPdf
@@ -509,12 +634,12 @@ const index = () => {
                   interacao={interacaoB}
                   resolucao={resolucaoB}
                   memoria={memoriaB}
+                  acompanhante={acompanhante}
                 />
               }
             </div>
           </div>
         </div>
-
         <div className="botao-enviar m-4 d-flex gap-2">
           <button onClick={handleResult} className="btn bg-success text-white">
             Enviar
@@ -524,6 +649,7 @@ const index = () => {
           </button>
 
           <button
+            onClick={handleClosedModal}
             style={{ backgroundColor: "#271d77" }}
             className="btn border bg-white"
           >
@@ -536,6 +662,7 @@ const index = () => {
             <FaPrint />
           </button>
           <button
+            onClick={copyTextResult}
             style={{ backgroundColor: "#271d77" }}
             className="btn bg-white border"
           >
