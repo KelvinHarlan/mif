@@ -84,11 +84,15 @@ const index = () => {
     { value: 7, label: "7 - Independência Completa" },
   ];
 
+  //Basic Data
   const [nome, setNome] = useState("");
   const [idade, setIdade] = useState("");
   const [sexo, setSexo] = useState("");
   const [areaAtuacao, setAreaAtuacao] = useState("");
   const [local, setLocal] = useState("");
+  const [cadeirante, setCadeirante] = useState(true);
+
+  //Selects
   const [alimentacao, setAlimentacao] = useState("");
   const [higienePessoal, setHigienePessoal] = useState("");
   const [banho, setBanho] = useState("");
@@ -107,66 +111,86 @@ const index = () => {
   const [interacao, setInteracao] = useState("");
   const [resolucao, setResolucao] = useState("");
   const [memoria, setMemoria] = useState("");
-  const [resultadoFinal, setResultadoFinal] = useState(null);
+
+  //Selects B
+  const [alimentacaoB, setAlimentacaoB] = useState("");
+  const [higienePessoalB, setHigienePessoalB] = useState("");
+  const [banhoB, setBanhoB] = useState("");
+  const [vestirSuperiorB, setVestirSuperiorB] = useState("");
+  const [vestirInferiorB, setVestirInferiorB] = useState("");
+  const [vasoB, setVasoB] = useState("");
+  const [urinaB, setUrinaB] = useState("");
+  const [fezesB, setFezesB] = useState("");
+  const [transferenciaCadeiraB, setTransferenciaCadeiraB] = useState("");
+  const [transferenciaVasoB, setTransferenciaVasoB] = useState("");
+  const [transferenciaChuveiroB, setTransferenciaChuveiroB] = useState("");
+  const [marchaCrB, setMarchaCrB] = useState("");
+  const [escadasB, setEscadasB] = useState("");
+  const [compreensaoB, setCompreensaoB] = useState("");
+  const [expressaoB, setExpressaoB] = useState("");
+  const [interacaoB, setInteracaoB] = useState("");
+  const [resolucaoB, setResolucaoB] = useState("");
+  const [memoriaB, setMemoriaB] = useState("");
+
+  //Send
   const [enviado, seteEnviado] = useState(false);
-  const [cadeirante, setCadeirante] = useState(true);
 
   const handleResult = () => {
     seteEnviado(true);
-    setAlimentacao(alimentacaoResult(alimentacao));
-    setHigienePessoal(higienePessoalResult(higienePessoal));
-    setBanho(banhoResult(banho));
-    setVestirSuperior(vestirSuperiorResult(vestirSuperior));
-    setVestirInferior(vestirInferiorResult(vestirInferior));
-    setVaso(vasoSanitarioResult(vaso));
-    setUrina(controleUrinaResult(urina));
-    setFezes(controleFezesResult(fezes));
-    setTransferenciaCadeira(
+    setAlimentacaoB(alimentacaoResult(alimentacao));
+    setHigienePessoalB(higienePessoalResult(higienePessoal));
+    setBanhoB(banhoResult(banho));
+    setVestirSuperiorB(vestirSuperiorResult(vestirSuperior));
+    setVestirInferiorB(vestirInferiorResult(vestirInferior));
+    setVasoB(vasoSanitarioResult(vaso));
+    setUrinaB(controleUrinaResult(urina));
+    setFezesB(controleFezesResult(fezes));
+    setTransferenciaCadeiraB(
       transferenciaLeitoResult(transferenciaCadeira, cadeirante)
     );
-    setTransferenciaVaso(
+    setTransferenciaVasoB(
       transferenciaVasoResult(transferenciaVaso, cadeirante)
     );
-    setTransferenciaChuveiro(
+    setTransferenciaChuveiroB(
       transferenciaBanheiraResult(transferenciaChuveiro, cadeirante)
     );
-    setMarchaCr(marchaCadeiraResult(marchaCr, cadeirante));
-    setEscadas(escadasResult(escadas));
-    setCompreensao(compreensaoResult(compreensao));
-    setExpressao(expressaoResult(expressao));
-    setInteracao(interacaoResult(interacao));
-    setResolucao(resolucaoResult(resolucao));
-    setMemoria(memoriaResult(memoria));
+    setMarchaCrB(marchaCadeiraResult(marchaCr, cadeirante));
+    setEscadasB(escadasResult(escadas));
+    setCompreensaoB(compreensaoResult(compreensao));
+    setExpressaoB(expressaoResult(expressao));
+    setInteracaoB(interacaoResult(interacao));
+    setResolucaoB(resolucaoResult(resolucao));
+    setMemoriaB(memoriaResult(memoria));
   };
 
   return (
     <div className="w-100">
       <ModalResultMobile
         enviado={enviado}
-        alimentacao={alimentacao}
-        higienePessoal={higienePessoal}
+        alimentacao={alimentacaoB}
+        higienePessoal={higienePessoalB}
         nome={nome}
         idade={idade}
         sexo={sexo}
         areaAtuacao={areaAtuacao}
         local={local}
-        banho={banho}
-        vestirSuperior={vestirSuperior}
-        vestirInferior={vestirInferior}
-        vaso={vaso}
-        urina={urina}
-        fezes={fezes}
-        transferenciaCadeira={transferenciaCadeira}
-        transferenciaVaso={transferenciaVaso}
-        transferenciaChuveiro={transferenciaChuveiro}
-        marchaCr={marchaCr}
-        escadas={escadas}
-        compreensao={compreensao}
-        expressao={expressao}
-        interacao={interacao}
-        resolucao={resolucao}
+        banho={banhoB}
+        vestirSuperior={vestirSuperiorB}
+        vestirInferior={vestirInferiorB}
+        vaso={vasoB}
+        urina={urinaB}
+        fezes={fezesB}
+        transferenciaCadeira={transferenciaCadeiraB}
+        transferenciaVaso={transferenciaVasoB}
+        transferenciaChuveiro={transferenciaChuveiroB}
+        marchaCr={marchaCrB}
+        escadas={escadasB}
+        compreensao={compreensaoB}
+        expressao={expressaoB}
+        interacao={interacaoB}
+        resolucao={resolucaoB}
+        memoria={memoriaB}
         seteEnviado={seteEnviado}
-        memoria={memoria}
       />
       <div className="container p-1">
         <div className="titulo">
@@ -461,30 +485,30 @@ const index = () => {
             <div className="texto-resultado">
               {
                 <ResultPdf
-                  alimentacao={alimentacao}
-                  higienePessoal={higienePessoal}
+                  alimentacao={alimentacaoB}
+                  higienePessoal={higienePessoalB}
                   enviado={enviado}
                   nome={nome}
                   idade={idade}
                   sexo={sexo}
                   areaAtuacao={areaAtuacao}
                   local={local}
-                  banho={banho}
-                  vestirSuperior={vestirSuperior}
-                  vestirInferior={vestirInferior}
-                  vaso={vaso}
-                  urina={urina}
-                  fezes={fezes}
-                  transferenciaCadeira={transferenciaCadeira}
-                  transferenciaVaso={transferenciaVaso}
-                  transferenciaChuveiro={transferenciaChuveiro}
-                  marchaCr={marchaCr}
-                  escadas={escadas}
-                  compreensao={compreensao}
-                  expressao={expressao}
-                  interacao={interacao}
-                  resolucao={resolucao}
-                  memoria={memoria}
+                  banho={banhoB}
+                  vestirSuperior={vestirSuperiorB}
+                  vestirInferior={vestirInferiorB}
+                  vaso={vasoB}
+                  urina={urinaB}
+                  fezes={fezesB}
+                  transferenciaCadeira={transferenciaCadeiraB}
+                  transferenciaVaso={transferenciaVasoB}
+                  transferenciaChuveiro={transferenciaChuveiroB}
+                  marchaCr={marchaCrB}
+                  escadas={escadasB}
+                  compreensao={compreensaoB}
+                  expressao={expressaoB}
+                  interacao={interacaoB}
+                  resolucao={resolucaoB}
+                  memoria={memoriaB}
                 />
               }
             </div>

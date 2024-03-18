@@ -12,6 +12,21 @@ const ModalResultMobile = ({
   areaAtuacao,
   local,
   banho,
+  vestirSuperior,
+  vestirInferior,
+  vaso,
+  urina,
+  fezes,
+  transferenciaCadeira,
+  transferenciaVaso,
+  transferenciaChuveiro,
+  marchaCr,
+  escadas,
+  compreensao,
+  expressao,
+  interacao,
+  resolucao,
+  memoria,
   seteEnviado,
 }) => {
   const handleClosed = () => {
@@ -55,6 +70,21 @@ const ModalResultMobile = ({
                   areaAtuacao={areaAtuacao}
                   local={local}
                   banho={banho}
+                  vestirSuperior={vestirSuperior}
+                  vestirInferior={vestirInferior}
+                  vaso={vaso}
+                  urina={urina}
+                  fezes={fezes}
+                  transferenciaCadeira={transferenciaCadeira}
+                  transferenciaVaso={transferenciaVaso}
+                  transferenciaChuveiro={transferenciaChuveiro}
+                  marchaCr={marchaCr}
+                  escadas={escadas}
+                  compreensao={compreensao}
+                  expressao={expressao}
+                  interacao={interacao}
+                  resolucao={resolucao}
+                  memoria={memoria}
                 />
                 {/*End Form*/}
               </div>
