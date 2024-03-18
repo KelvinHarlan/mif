@@ -16,14 +16,29 @@ import {
   FaWheelchair,
 } from "react-icons/fa";
 import imagem from "../../../public/imagens/logo.png";
+import ModalResultMobile from "./components/ModalResultMobile";
 import {
   alimentacaoResult,
   banhoResult,
+  compreensaoResult,
+  controleFezesResult,
+  controleUrinaResult,
+  escadasResult,
+  expressaoResult,
   higienePessoalResult,
+  interacaoResult,
+  marchaCadeiraResult,
+  memoriaResult,
+  resolucaoResult,
+  transferenciaBanheiraResult,
+  transferenciaLeitoResult,
+  transferenciaVasoResult,
+  vasoSanitarioResult,
+  vestirInferiorResult,
+  vestirSuperiorResult,
 } from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
-import ModalResultMobile from "./components/ModalResultMobile";
 
 const index = () => {
   //Variables
@@ -63,7 +78,7 @@ const index = () => {
     { value: 2, label: "2 - Assistência Máxima" },
     { value: 3, label: "3 - Assistência Moderada" },
     { value: 4, label: "4 - Assistência com Contato Mínimo" },
-    { value: 5.0, label: "5 - Supervisão" },
+    { value: "5.0", label: "5 - Supervisão" },
     { value: 5, label: "5 - Deambulação Doméstica" },
     { value: 6, label: "6 - Independência Modificada" },
     { value: 7, label: "7 - Independência Completa" },
@@ -94,19 +109,34 @@ const index = () => {
   const [memoria, setMemoria] = useState("");
   const [resultadoFinal, setResultadoFinal] = useState(null);
   const [enviado, seteEnviado] = useState(false);
+  const [cadeirante, setCadeirante] = useState(true);
 
   const handleResult = () => {
     seteEnviado(true);
     setAlimentacao(alimentacaoResult(alimentacao));
     setHigienePessoal(higienePessoalResult(higienePessoal));
     setBanho(banhoResult(banho));
-  };
-
-  const handleResultMobile = () => {
-    seteEnviado(true);
-    setAlimentacao(alimentacaoResult(alimentacao));
-    setHigienePessoal(higienePessoalResult(higienePessoal));
-    setBanho(banhoResult(banho));
+    setVestirSuperior(vestirSuperiorResult(vestirSuperior));
+    setVestirInferior(vestirInferiorResult(vestirInferior));
+    setVaso(vasoSanitarioResult(vaso));
+    setUrina(controleUrinaResult(urina));
+    setFezes(controleFezesResult(fezes));
+    setTransferenciaCadeira(
+      transferenciaLeitoResult(transferenciaCadeira, cadeirante)
+    );
+    setTransferenciaVaso(
+      transferenciaVasoResult(transferenciaVaso, cadeirante)
+    );
+    setTransferenciaChuveiro(
+      transferenciaBanheiraResult(transferenciaChuveiro, cadeirante)
+    );
+    setMarchaCr(marchaCadeiraResult(marchaCr, cadeirante));
+    setEscadas(escadasResult(escadas));
+    setCompreensao(compreensaoResult(compreensao));
+    setExpressao(expressaoResult(expressao));
+    setInteracao(interacaoResult(interacao));
+    setResolucao(resolucaoResult(resolucao));
+    setMemoria(memoriaResult(memoria));
   };
 
   return (
@@ -121,7 +151,22 @@ const index = () => {
         areaAtuacao={areaAtuacao}
         local={local}
         banho={banho}
+        vestirSuperior={vestirSuperior}
+        vestirInferior={vestirInferior}
+        vaso={vaso}
+        urina={urina}
+        fezes={fezes}
+        transferenciaCadeira={transferenciaCadeira}
+        transferenciaVaso={transferenciaVaso}
+        transferenciaChuveiro={transferenciaChuveiro}
+        marchaCr={marchaCr}
+        escadas={escadas}
+        compreensao={compreensao}
+        expressao={expressao}
+        interacao={interacao}
+        resolucao={resolucao}
         seteEnviado={seteEnviado}
+        memoria={memoria}
       />
       <div className="container p-1">
         <div className="titulo">
@@ -425,6 +470,21 @@ const index = () => {
                   areaAtuacao={areaAtuacao}
                   local={local}
                   banho={banho}
+                  vestirSuperior={vestirSuperior}
+                  vestirInferior={vestirInferior}
+                  vaso={vaso}
+                  urina={urina}
+                  fezes={fezes}
+                  transferenciaCadeira={transferenciaCadeira}
+                  transferenciaVaso={transferenciaVaso}
+                  transferenciaChuveiro={transferenciaChuveiro}
+                  marchaCr={marchaCr}
+                  escadas={escadas}
+                  compreensao={compreensao}
+                  expressao={expressao}
+                  interacao={interacao}
+                  resolucao={resolucao}
+                  memoria={memoria}
                 />
               }
             </div>

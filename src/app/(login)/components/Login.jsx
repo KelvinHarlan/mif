@@ -21,12 +21,14 @@ const Login = () => {
   const [emailLogin, setEmailLogin] = useState("avaliamais@gmail.com");
 
   const verifyLogin = () => {
-    if (password === passwordLogin && emailLogin === email) {
+    if (
+      password === passwordLogin &&
+      emailLogin === email.toLocaleLowerCase()
+    ) {
       console.log("Login realizado com sucesso");
       toast.success("Login realizado com sucesso!");
       router.push("/assessment");
     } else {
-      console.log("algo deu errado ");
       toast.error("Login ou senha inválido.");
     }
   };

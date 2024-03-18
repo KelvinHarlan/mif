@@ -8,6 +8,21 @@ const ResultPdf = ({
   enviado,
   higienePessoal,
   banho,
+  vestirSuperior,
+  vestirInferior,
+  vaso,
+  urina,
+  fezes,
+  transferenciaCadeira,
+  transferenciaVaso,
+  transferenciaChuveiro,
+  marchaCr,
+  escadas,
+  compreensao,
+  expressao,
+  interacao,
+  resolucao,
+  memoria,
 }) => {
   return (
     <>
@@ -70,6 +85,176 @@ const ResultPdf = ({
 
                   <td style={{ wordWrap: "break-word" }}>
                     {banho.value && banho.value}
+                  </td>
+                </tr>
+              )}
+              {vestirSuperior && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{vestirSuperior.area && vestirSuperior.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {vestirSuperior.value && vestirSuperior.value}
+                  </td>
+                </tr>
+              )}
+              {vestirInferior && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{vestirInferior.area && vestirInferior.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {vestirInferior.value && vestirInferior.value}
+                  </td>
+                </tr>
+              )}
+              {vaso && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{vaso.area && vaso.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {vaso.value && vaso.value}
+                  </td>
+                </tr>
+              )}
+              {urina && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{urina.area && urina.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {urina.value && urina.value}
+                  </td>
+                </tr>
+              )}
+              {fezes && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{fezes.area && fezes.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {fezes.value && fezes.value}
+                  </td>
+                </tr>
+              )}
+              {transferenciaCadeira && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>
+                      {transferenciaCadeira.area && transferenciaCadeira.area}
+                    </b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {transferenciaCadeira.value && transferenciaCadeira.value}
+                  </td>
+                </tr>
+              )}
+              {transferenciaVaso && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{transferenciaVaso.area && transferenciaVaso.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {transferenciaVaso.value && transferenciaVaso.value}
+                  </td>
+                </tr>
+              )}
+              {transferenciaChuveiro && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>
+                      {transferenciaChuveiro.area && transferenciaChuveiro.area}
+                    </b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {transferenciaChuveiro.value && transferenciaChuveiro.value}
+                  </td>
+                </tr>
+              )}
+              {marchaCr && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{marchaCr.area && marchaCr.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {marchaCr.value && marchaCr.value}
+                  </td>
+                </tr>
+              )}
+
+              {escadas && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{escadas.area && escadas.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {escadas.value && escadas.value}
+                  </td>
+                </tr>
+              )}
+              {compreensao && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{compreensao.area && compreensao.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {compreensao.value && compreensao.value}
+                  </td>
+                </tr>
+              )}
+              {expressao && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{expressao.area && expressao.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {expressao.value && expressao.value}
+                  </td>
+                </tr>
+              )}
+              {interacao && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{interacao.area && interacao.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {interacao.value && interacao.value}
+                  </td>
+                </tr>
+              )}
+              {resolucao && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{resolucao.area && resolucao.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {resolucao.value && resolucao.value}
+                  </td>
+                </tr>
+              )}
+              {memoria && enviado && (
+                <tr>
+                  <td style={{ wordWrap: "break-word" }}>
+                    <b>{memoria.area && memoria.area}</b>
+                  </td>
+
+                  <td style={{ wordWrap: "break-word" }}>
+                    {memoria.value && memoria.value}
                   </td>
                 </tr>
               )}
