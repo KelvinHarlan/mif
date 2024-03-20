@@ -3,8 +3,20 @@
   text-decoration: none;
  
 }
+
+.text-justify{
+  text-align: justify;
+}
+
+.modal-header{
+  border: none !important;
+}
 body{
    background-color: #f7f7f7 !important;
+}
+
+.blueColorDefaut{
+  color:#271d77;
 }
 
 /*Start Mobile*/

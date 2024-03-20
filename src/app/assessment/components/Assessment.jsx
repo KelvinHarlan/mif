@@ -1,10 +1,10 @@
 "use client";
 import imagemLogo from "@/../public/imagens/logo.png";
-import ModalCommon from "@/components/utils/ModalCommon";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaInfoCircle, FaUserCircle } from "react-icons/fa";
+import ModalInfoMif from "./ModalInfoMif";
 const Assessment = () => {
   const router = useRouter();
   const handleMif = () => {
@@ -20,15 +20,9 @@ const Assessment = () => {
     setshowModal(true);
   };
 
-  const message = ``;
-
   return (
     <div className="container-assessment">
-      <ModalCommon
-        message={message}
-        showModal={showModal}
-        handleClosed={handleClosed}
-      />
+      <ModalInfoMif showModal={showModal} handleClosed={handleClosed} />
       <div className="container-logo-user">
         <div className="avaliation-logo">
           <Image
