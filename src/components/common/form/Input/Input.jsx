@@ -1,8 +1,8 @@
 const Input = ({ label, register, error, ...rest }) => {
   return (
     <div className="form-group d-flex flex-column p-1">
-      <label className={error && "text-danger"}>
-        <b>{label}</b>
+      <label className={`${error && "text-danger"}`}>
+        <b className="blueColorDefaut">{label}</b>
       </label>
       <input
         className={error && "border border-danger bg-danger bg-opacity-10"}

@@ -9,7 +9,7 @@ const Select = ({
 }) => {
   return (
     <div className="form-group  d-flex flex-column p-1">
-      <label className={`${error && "text-danger"}`}>
+      <label className={`${error && "text-danger"} blueColorDefaut`}>
         <span className="d-flex gap-1 flex-wrap">
           <b>{label}</b> <span>{label2}</span>
         </span>

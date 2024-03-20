@@ -501,7 +501,7 @@ const index = () => {
                 </span>
               </h5>
 
-              <label>
+              <label className="blueColorDefaut">
                 <b>Compreensão:</b>
               </label>
               <select
@@ -520,7 +520,7 @@ const index = () => {
                 <option value="7">7 - Independência Completa</option>
               </select>
 
-              <label>
+              <label className="blueColorDefaut">
                 <b>Expressão:</b>
               </label>
               <select
@@ -547,7 +547,7 @@ const index = () => {
                   <FaPuzzlePiece />
                 </span>
               </h5>
-              <label>
+              <label className="blueColorDefaut">
                 <b>Interação social:</b>
               </label>
               <select
@@ -566,7 +566,7 @@ const index = () => {
                 <option value="7">7 - Independência Completa</option>
               </select>
 
-              <label>
+              <label className="blueColorDefaut">
                 <b>Resolução de problemas:</b>
               </label>
               <select
@@ -585,7 +585,7 @@ const index = () => {
                 <option value="7">7 - Independência Completa</option>
               </select>
 
-              <label>
+              <label className="blueColorDefaut">
                 <b>Memória:</b>
               </label>
               <select
