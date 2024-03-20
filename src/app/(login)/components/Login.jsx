@@ -26,7 +26,7 @@ const Login = () => {
       emailLogin === email.toLocaleLowerCase()
     ) {
       console.log("Login realizado com sucesso");
-      toast.success("Login realizado com sucesso!");
+      toast.success("Login realizado com sucesso!", { autoClose: 1000 });
       router.push("/assessment");
     } else {
       toast.error("Login ou senha inválido.");
