@@ -141,6 +141,10 @@ select{
         z-index: 9999;
     }
 
+    .caixa-form-conhecimento-social{
+        margin-bottom: 15vh;
+    }
+
     .enviar {
         display: inline-block;
         margin: 2vh 4vw;
