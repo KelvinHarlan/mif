@@ -6,6 +6,13 @@ const ResultPdf = ({
   idade,
   local,
   acompanhante,
+  placa,
+  gengivite,
+  saburra,
+  halitose,
+  secrecao,
+  sangue,
+  restos,
 }) => {
   return (
     <>
@@ -31,28 +38,110 @@ const ResultPdf = ({
               de higiene bucal de equipe e/ou cuidador, conforme descrito à
               seguir:
             </p>
-            <p>Ecore: {messageResult?.score}</p>
+
             <table className="table">
               <thead>
                 <tr>
-                  <th scope="col">Área</th>
+                  <th scope="col">Descrição</th>
                   <th scope="col">Resultado</th>
                 </tr>
               </thead>
               <tbody>
-                {messageResult && enviado && (
+                {placa && enviado && (
                   <tr>
                     <td style={{ wordWrap: "break-word" }}>
-                      <b>{messageResult?.area && messageResult?.area}</b>
+                      <p>Presença de placa dental/Biofilme:</p>
                     </td>
 
                     <td style={{ wordWrap: "break-word" }}>
-                      {messageResult?.value && messageResult?.value}
+                      {placa} - {placa === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+                {gengivite && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <p>Gengivite:</p>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      {gengivite} - {gengivite === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+                {saburra && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <p>Saburra:</p>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      {saburra} - {saburra === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+                {halitose && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <p>Halitose:</p>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      {halitose} - {halitose === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+                {secrecao && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <p>Presença de secreção/ Crosta:</p>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      {secrecao} - {secrecao === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+                {sangue && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <p>Presença de sangue:</p>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      {sangue} - {sangue === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+                {restos && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <p>Presença de restos alimentares (dieta):</p>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      {restos} - {restos === "1" ? "Sim" : "Não"}
+                    </td>
+                  </tr>
+                )}
+
+                {messageResult && enviado && (
+                  <tr>
+                    <td style={{ wordWrap: "break-word" }}>
+                      <b>{"Total:"}</b>
+                    </td>
+
+                    <td style={{ wordWrap: "break-word" }}>
+                      <b>
+                        {messageResult?.score && messageResult?.score}-{" "}
+                        {messageResult?.value}
+                      </b>
                     </td>
                   </tr>
                 )}
               </tbody>
             </table>
+
             {acompanhante && (
               <p>
                 Durante toda a avaliação, a paciente esteve sob acompanhamento

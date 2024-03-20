@@ -319,6 +319,13 @@ const index = () => {
                   idade={idade}
                   local={local}
                   acompanhante={acompanhante}
+                  placa={placa}
+                  gengivite={gengivite}
+                  saburra={saburra}
+                  halitose={halitose}
+                  secrecao={secrecao}
+                  sangue={sangue}
+                  restos={restos}
                 />
               }
             </div>
