@@ -113,14 +113,14 @@ const ModalResultMobile = ({
                   />
                 </div>
                 <div className="d-flex justify-content-center">
-                  <button
+                  {/* <button
                     onClick={copyTextResult}
                     style={{ backgroundColor: "#271d77" }}
                     className="btn bg-white border"
                   >
                     <span>Copiar </span>
                     <FaCopy />
-                  </button>
+                  </button> */}
                 </div>
                 {/*End Form*/}
               </div>

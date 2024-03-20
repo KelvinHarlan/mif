@@ -641,7 +641,10 @@ const index = () => {
           </div>
         </div>
         <div className="botao-enviar m-4 d-flex gap-2">
-          <button onClick={handleResult} className="btn bg-success text-white">
+          <button
+            onClick={handleResult}
+            className="btn blueBgDefaut text-white"
+          >
             Enviar
             <i className="text-white">
               <FaPaperPlane />

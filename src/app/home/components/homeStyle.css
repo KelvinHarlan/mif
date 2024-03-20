@@ -12,6 +12,14 @@
     color:#271d77 !important;
   }
 
+.blueBgDefaut{
+    background-color: #271d77 !important;
+}
+
+.btn:hover{
+    background-color: #271d77 !important;
+    color: #fff;
+}
 
 select{
     padding: 10px !important;
@@ -22,6 +30,7 @@ select{
 
 /*Start mobile*/
 @media (max-width: 1023px) {
+    
     html {
         scroll-behavior: smooth;
     }
