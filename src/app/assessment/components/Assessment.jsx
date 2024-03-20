@@ -63,7 +63,7 @@ const Assessment = () => {
           </span>
           <div className="card">
             <span className="content-card">
-              ESCALA DE DEPRESSÃO GERIÁTRICA ABREVIADA
+              INDICADOR DE HIGIENE ORAL DO PACIENTE CRÍTICO (IHOPC)
             </span>
           </div>
         </div>

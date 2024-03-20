@@ -372,6 +372,9 @@ const index = () => {
           <form className="caixa-formulario">
             <div className="caixa-form-autoCuidado">
               <h5 className="autocuidado ">
+                <div className="test-name">
+                  MEDIDA DE INDEPENDÊNCIA FUNCIONAL
+                </div>
                 <span className="titulos-cards">
                   Autocuidado <FaUtensils />
                 </span>
