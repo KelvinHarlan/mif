@@ -13,6 +13,7 @@ const ResultPdf = ({
   secrecao,
   sangue,
   restos,
+  sexo,
 }) => {
   return (
     <>
@@ -20,7 +21,7 @@ const ResultPdf = ({
         {enviado && (
           <div style={{ padding: "20px" }} className="container-resul">
             <p>
-              {`Realizada visita a paciente ${
+              {`Realizada visita ${sexo === "Feminino" ? "a" : "ao"} paciente ${
                 nome ? nome.toUpperCase() : "[ NOME ]"
               }, ${idade ? idade : "[ IDADE ]"} anos, em
         ${local ? local : "[ LOCAL ]"} para Avaliação Inicial da ${
@@ -133,8 +134,8 @@ const ResultPdf = ({
 
                     <td style={{ wordWrap: "break-word" }}>
                       <b>
-                        {messageResult?.score && messageResult?.score}-{" "}
-                        {messageResult?.value}
+                        {messageResult?.score && `${messageResult?.score} `}-
+                        {` ${messageResult?.value}`}
                       </b>
                     </td>
                   </tr>
@@ -144,8 +145,10 @@ const ResultPdf = ({
 
             {acompanhante && (
               <p>
-                Durante toda a avaliação, a paciente esteve sob acompanhamento
-                de familiar responsável.
+                {`Durante toda a avaliação, ${
+                  sexo === "Feminino" ? "a" : "o"
+                } paciente esteve sob acompanhamento
+                de familiar responsável.`}
               </p>
             )}
             {messageResult?.score > 1 ? (

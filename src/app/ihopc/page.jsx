@@ -9,6 +9,9 @@ import imagem from "../../../public/imagens/logo.png";
 import { toast } from "react-toastify";
 import "../../app/home/components/homeStyle.css";
 import ResultPdf from "./components/ResultPdf";
+import ModalResultMobile from "./components/ModalResultMobile/ModaResultMobile";
+import ModalClear from "../home/components/ModalClear/ModalClear";
+
 // import ModalClear from "./components/ModalClear/ModalClear";
 
 const index = () => {
@@ -56,15 +59,6 @@ const index = () => {
   const [secrecao, setSecrecao] = useState("");
   const [sangue, setSangue] = useState("");
   const [restos, setRestos] = useState("");
-
-  //Selects B
-  // const [placaB, setplacaB] = useState("");
-  // const [gengiviteB, setGengiviteB] = useState("");
-  // const [saburraB, setSaburraB] = useState("");
-  // const [halitoseB, setHalitoseB] = useState("");
-  // const [secrecaoB, setSecrecaoB] = useState("");
-  // const [sangueB, setSangueB] = useState("");
-  // const [restosB, setRestosB] = useState("");
 
   //Send
   const [enviado, seteEnviado] = useState(false);
@@ -123,6 +117,18 @@ const index = () => {
 
   //Handle Clear
   const clear = () => {
+    setNome("");
+    setIdade("");
+    setSexo("");
+    setAreaAtuacao("");
+    setLocal("");
+    setplaca("");
+    setGengivite("");
+    setSaburra("");
+    setHalitose("");
+    setSecrecao("");
+    setSangue("");
+    setRestos("");
     setIsModalClosed(false);
     seteEnviado(false);
     toast.success("Apagado com sucesso!", {
@@ -157,16 +163,30 @@ const index = () => {
   //Component ##########################################################
   return (
     <div className="w-100">
-      {/* <ModalClear
+      <ModalClear
         isModalClosed={isModalClosed}
         setIsModalClosed={setIsModalClosed}
         clear={clear}
         seteEnviado={seteEnviado}
-      /> */}
-      {/* <ModalResultMobile
+      />
+      <ModalResultMobile
+        messageResult={messageResult}
         enviado={enviado}
+        nome={nome}
+        areaAtuacao={areaAtuacao}
+        idade={idade}
+        local={local}
+        acompanhante={acompanhante}
+        placa={placa}
+        gengivite={gengivite}
+        saburra={saburra}
+        halitose={halitose}
+        secrecao={secrecao}
+        sangue={sangue}
+        restos={restos}
+        sexo={sexo}
         seteEnviado={seteEnviado}
-      /> */}
+      />
       <div className="container p-1">
         <div className="titulo">
           <Image
@@ -326,6 +346,7 @@ const index = () => {
                   secrecao={secrecao}
                   sangue={sangue}
                   restos={restos}
+                  sexo={sexo}
                 />
               }
             </div>
