@@ -5,10 +5,16 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { FaInfoCircle, FaUserCircle } from "react-icons/fa";
 import ModalInfoMif from "./ModalInfoMif";
+import { toast } from "react-toastify";
 const Assessment = () => {
   const router = useRouter();
   const handleMif = () => {
     router.push("/home");
+    toast.success("Sucesso!");
+  };
+  const handleIhopc = () => {
+    router.push("/ihopc");
+    toast.success("Sucesso!");
   };
   const [showModal, setshowModal] = useState(false);
 
@@ -61,7 +67,7 @@ const Assessment = () => {
           <span className="more">
             <FaInfoCircle className="icon-card" />
           </span>
-          <div className="card">
+          <div onClick={handleIhopc} className="card">
             <span className="content-card">
               INDICADOR DE HIGIENE ORAL DO PACIENTE CRÍTICO (IHOPC)
             </span>
