@@ -221,6 +221,7 @@ const index = () => {
   //handle closed Modal clear
   const handleClosedModal = () => {
     setIsModalClosed(true);
+    seteEnviado(false);
   };
 
   const componenteRef = useRef(null);
@@ -248,6 +249,7 @@ const index = () => {
         isModalClosed={isModalClosed}
         setIsModalClosed={setIsModalClosed}
         clear={clear}
+        seteEnviado={seteEnviado}
       />
       <ModalResultMobile
         enviado={enviado}

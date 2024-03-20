@@ -1,13 +1,16 @@
 "use client";
 
-const ModalClear = ({ isModalClosed, setIsModalClosed, clear }) => {
-  const handleClosed = () => {
-    setIsModalClosed(false);
-  };
-
+const ModalClear = ({ isModalClosed, setIsModalClosed, clear, seteEnviado }) => {
   //Component
+
+  const handleNot = ()=>{
+    seteEnviado(true)
+    setIsModalClosed(false)
+  }
+
+
   return (
-    <div>
+    <div className="modalClear">
       {isModalClosed && (
         <div
           className="modal d-flex align-items-center justify-content-center"
@@ -26,7 +29,7 @@ const ModalClear = ({ isModalClosed, setIsModalClosed, clear }) => {
                       Sim
                     </button>
                     <button
-                      onClick={() => setIsModalClosed(false)}
+                      onClick={handleNot}
                       className="btn   btn-light border"
                     >
                       Não
