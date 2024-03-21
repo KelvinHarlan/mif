@@ -3,7 +3,13 @@ import Input from "@/components/common/form/Input/Input";
 import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { FaCopy, FaPaperPlane, FaPrint, FaRegTrashAlt } from "react-icons/fa";
+import {
+  FaCopy,
+  FaHome,
+  FaPaperPlane,
+  FaPrint,
+  FaRegTrashAlt,
+} from "react-icons/fa";
 import imagem from "../../../public/imagens/logo.png";
 // import ModalResultMobile from "./components/ModalResultMobile";
 import { toast } from "react-toastify";
@@ -11,6 +17,7 @@ import "../../app/home/components/homeStyle.css";
 import ResultPdf from "./components/ResultPdf";
 import ModalResultMobile from "./components/ModalResultMobile/ModaResultMobile";
 import ModalClear from "../home/components/ModalClear/ModalClear";
+import { useRouter } from "next/navigation";
 
 // import ModalClear from "./components/ModalClear/ModalClear";
 
@@ -110,9 +117,11 @@ const index = () => {
     setAcompanhante(!acompanhante);
   };
 
-  //handle Print
-  const handlePrint = () => {
-    window.print();
+  //Home
+  const router = useRouter();
+  const handleHome = () => {
+    router.push("/assessment");
+    toast.success("Sucesso!");
   };
 
   //Handle Clear
@@ -361,6 +370,13 @@ const index = () => {
             <i className="text-white">
               <FaPaperPlane />
             </i>
+          </button>
+          <button
+            onClick={handleHome}
+            style={{ backgroundColor: "#271d77" }}
+            className="btn border bg-white"
+          >
+            <FaHome />
           </button>
 
           <button

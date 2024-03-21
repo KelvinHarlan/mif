@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import {
   FaCommentDots,
   FaCopy,
+  FaHome,
   FaPaperPlane,
   FaPrint,
   FaPuzzlePiece,
@@ -42,6 +43,7 @@ import {
 } from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
+import { useRouter } from "next/navigation";
 
 const index = () => {
   //Variables
@@ -179,6 +181,13 @@ const index = () => {
     setAcompanhante(!acompanhante);
   };
 
+  //Home
+  const router = useRouter();
+  const handleHome = () => {
+    router.push("/assessment");
+    toast.success("Sucesso!");
+  };
+
   //Handle Clear
   const clear = () => {
     setNome("");
@@ -243,7 +252,7 @@ const index = () => {
     const contentToPrint = document.getElementById("content-print");
     if (contentToPrint) {
       const content = contentToPrint.innerHTML;
-      const printWindow = window.open("", "_blank");
+      const printWindow = window.open("AvaliaMais", "_blank");
       printWindow.document.open();
       printWindow.document.write(`
         <html>
@@ -678,7 +687,13 @@ const index = () => {
               <FaPaperPlane />
             </i>
           </button>
-
+          <button
+            onClick={handleHome}
+            style={{ backgroundColor: "#271d77" }}
+            className="btn border bg-white"
+          >
+            <FaHome />
+          </button>
           <button
             onClick={handleClosedModal}
             style={{ backgroundColor: "#271d77" }}
