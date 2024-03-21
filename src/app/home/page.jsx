@@ -4,14 +4,15 @@ import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
 import { useRef, useState } from "react";
 
+import { useRouter } from "next/navigation";
 import {
   FaCommentDots,
   FaCopy,
-  FaHome,
   FaPaperPlane,
   FaPrint,
   FaPuzzlePiece,
   FaRegTrashAlt,
+  FaReply,
   FaRunning,
   FaToilet,
   FaUtensils,
@@ -43,7 +44,6 @@ import {
 } from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
-import { useRouter } from "next/navigation";
 
 const index = () => {
   //Variables
@@ -679,20 +679,11 @@ const index = () => {
         </div>
         <div className="botao-enviar m-4 d-flex gap-2">
           <button
-            onClick={handleResult}
-            className="btn blueBgDefaut text-white"
-          >
-            Enviar
-            <i className="text-white">
-              <FaPaperPlane />
-            </i>
-          </button>
-          <button
             onClick={handleHome}
             style={{ backgroundColor: "#271d77" }}
             className="btn border bg-white"
           >
-            <FaHome />
+            <FaReply />
           </button>
           <button
             onClick={handleClosedModal}
@@ -700,6 +691,15 @@ const index = () => {
             className="btn border bg-white"
           >
             <FaRegTrashAlt />
+          </button>
+          <button
+            onClick={handleResult}
+            className="btn blueBgDefaut text-white"
+          >
+            Enviar
+            <i className="text-white">
+              <FaPaperPlane />
+            </i>
           </button>
           <button
             onClick={handlePrint}

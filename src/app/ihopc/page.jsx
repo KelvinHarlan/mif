@@ -5,19 +5,19 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import {
   FaCopy,
-  FaHome,
   FaPaperPlane,
   FaPrint,
   FaRegTrashAlt,
+  FaReply,
 } from "react-icons/fa";
 import imagem from "../../../public/imagens/logo.png";
 // import ModalResultMobile from "./components/ModalResultMobile";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 import "../../app/home/components/homeStyle.css";
-import ResultPdf from "./components/ResultPdf";
-import ModalResultMobile from "./components/ModalResultMobile/ModaResultMobile";
 import ModalClear from "../home/components/ModalClear/ModalClear";
-import { useRouter } from "next/navigation";
+import ModalResultMobile from "./components/ModalResultMobile/ModaResultMobile";
+import ResultPdf from "./components/ResultPdf";
 
 // import ModalClear from "./components/ModalClear/ModalClear";
 
@@ -363,20 +363,11 @@ const index = () => {
         </div>
         <div className="botao-enviar m-4 d-flex gap-2">
           <button
-            onClick={handleResult}
-            className="btn blueBgDefaut text-white"
-          >
-            Enviar
-            <i className="text-white">
-              <FaPaperPlane />
-            </i>
-          </button>
-          <button
             onClick={handleHome}
             style={{ backgroundColor: "#271d77" }}
             className="btn border bg-white"
           >
-            <FaHome />
+            <FaReply />
           </button>
 
           <button
@@ -385,6 +376,15 @@ const index = () => {
             className="btn border bg-white"
           >
             <FaRegTrashAlt />
+          </button>
+          <button
+            onClick={handleResult}
+            className="btn blueBgDefaut text-white"
+          >
+            Enviar
+            <i className="text-white">
+              <FaPaperPlane />
+            </i>
           </button>
           <button
             style={{ backgroundColor: "#271d77" }}
