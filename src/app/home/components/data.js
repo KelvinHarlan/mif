@@ -282,7 +282,7 @@ const vasoSanitarioResult = (vasoSanitario) => {
     return {
       area: "Utilização do vaso sanitário:",
       value:
-        "Independência Completa - Lima-se após o uso do vaso sanitário, maneja papel higiênico, retira e coloca a roupa para ir ao banheiro de forma independente, com desempenho seguro.",
+        "Independência Completa - Limpa-se após o uso do vaso sanitário, maneja papel higiênico, retira e coloca a roupa para ir ao banheiro de forma independente, com desempenho seguro.",
     };
   }
   //End
@@ -301,7 +301,7 @@ const controleUrinaResult = (controleUrina) => {
     return {
       area: "Controle da Urina: (frequência de incontinência):",
       value:
-        "Assistência Máxima - A pessoa se molha quase todos os dias;  necessita usar absorventes quer esteja ou não usando dispositivos A pessoa executa 25 a 49% das tarefas.",
+        "Assistência Máxima - A pessoa se molha quase todos os dias;  necessita usar absorventes quer esteja ou não usando dispositivos. A pessoa executa 25 a 49% das tarefas.",
     };
   } else if (controleUrina === "3") {
     return {
@@ -374,7 +374,7 @@ const controleFezesResult = (controleFezes) => {
     return {
       area: "Controle das fezes:",
       value:
-        "Independência Modificada - Requer uso de comadre, mesa de apoio, estimulo manual, supositórios, laxantes,lavagens de forma regular ou uso de medicações. Sem acidentes.",
+        "Independência Modificada - Requer uso de comadre, mesa de apoio, estímulo manual, supositórios, laxantes, lavagens de forma regular ou uso de medicações. Sem acidentes.",
     };
   } else if (controleFezes === "7") {
     return {
@@ -408,7 +408,7 @@ const transferenciaLeitoResult = (transferenciaLeito, cadeirante) => {
     return {
       area: "Transferências: (leito, cadeira, cadeira de rodas):",
       value:
-        "Assistência com Contato Mínimol - É preciso apenas tocar na pessoa para realização das tarefas. A pessoa executa 75% ou mais das tarefas.",
+        "Assistência com Contato Mínimo - É preciso apenas tocar na pessoa para realização das tarefas. A pessoa executa 75% ou mais das tarefas.",
     };
   } else if (transferenciaLeito === "5") {
     return {
@@ -426,13 +426,13 @@ const transferenciaLeitoResult = (transferenciaLeito, cadeirante) => {
     return {
       area: "Transferências: (leito, cadeira, cadeira de rodas):",
       value:
-        " Independência Total - Aproxíma-se, senta-se e levanta-se de uma cadeira normal e fica em uma posição ereta; transfere-se da cama para uma cadeira. Executa com segurança.",
+        " Independência Total - Aproxima-se, senta-se e levanta-se de uma cadeira normal e fica em uma posição ereta; transfere-se da cama para uma cadeira. Executa com segurança.",
     };
   } else if (transferenciaLeito === "7" && cadeirante) {
     return {
       area: "Transferências: (leito, cadeira, cadeira de rodas):",
       value:
-        "Independência Total - Aproxíma-se da cama ou da cadeira, aciona o freio, ajusta os pedais e remove o apoio dos braços caso necessário; transfere-se e retorna. Executa com segurança.",
+        "Independência Total - Aproxima-se da cama ou da cadeira, aciona o freio, ajusta os pedais e remove o apoio dos braços, caso necessário; transfere-se e retorna. Executa com segurança.",
     };
   }
   //End
@@ -472,19 +472,19 @@ const transferenciaVasoResult = (transferenciaVaso, cadeirante) => {
     return {
       area: "Transferências: (Vaso sanitário):",
       value:
-        " Independência Modificada - Requer dispositivos de ajuda ou adaptações. Leva um tempo acima do razoável ou existem riscos de segurança.",
+        "Independência Modificada - Requer dispositivos de ajuda ou adaptações. Leva um tempo acima do razoável ou existem riscos de segurança.",
     };
   } else if (transferenciaVaso === "7" && !cadeirante) {
     return {
       area: "Transferências: (Vaso sanitário):",
       value:
-        "Aproxíma-se, senta-se e levanta-se de um vaso padrão. Executa com segurança.",
+        "Independência Completa - Aproxima-se, senta-se e levanta-se de um vaso padrão. Executa com segurança.",
     };
   } else if (transferenciaVaso === "7" && cadeirante) {
     return {
       area: "Transferências: (Vaso sanitário):",
       value:
-        "Aproxíma-se do vaso, aciona o freio, ajusta os pedais e remove o apoio dos braços caso necessário; transfere-se e retorna. Executa com segurança.",
+        "Independência Completa - Aproxima-se do vaso, aciona o freio, ajusta os pedais e remove o apoio dos braços, caso necessário; transfere-se e retorna. Executa com segurança.",
     };
   }
 
@@ -531,13 +531,13 @@ const transferenciaBanheiraResult = (transferenciaBanheira, cadeirante) => {
     return {
       area: "Transferências: (Banheira ou chuveiro):",
       value:
-        "Independência Completa - Aproxíma-se do boxe, aciona o freio, ajusta os pedais e remove o apoio dos braços caso necessário; transfere-se e retorna. Executa com segurança.",
+        "Independência Completa - Aproxima-se do boxe, aciona o freio, ajusta os pedais e remove o apoio dos braços, caso necessário; transfere-se e retorna. Executa com segurança.",
     };
   } else if (transferenciaBanheira === "7" && !cadeirante) {
     return {
       area: "Transferências: (Banheira ou chuveiro):",
       value:
-        "Independência Completa - Aproxíma-se, entra e sai do boxe. Executa com segurança.",
+        "Independência Completa - Aproxima-se, entra e sai do boxe. Executa com segurança.",
     };
   }
 
@@ -550,13 +550,13 @@ const marchaCadeiraResult = (marchaCadeira, cadeirante) => {
   if (marchaCadeira === "1") {
     return {
       area: "Marcha/ Cadeira de rodas:",
-      value: "",
+      value: "Assistência Total - A pessoa executa menos de 25% do esforço ou requer assistência de duas pessoas ou não anda o mínimo de 17 metros.",
     };
   } else if (marchaCadeira === "2") {
     return {
       area: "Marcha/ Cadeira de rodas:",
       value:
-        "A pessoa executa 25 a 49% do esforço de locomoção para andar um mínimo de 15 metros. Requer a assisência de uma pessoa.",
+        "Assistência Máxima - A pessoa executa 25 a 49% do esforço de locomoção para andar um mínimo de 15 metros. Requer a assisência de uma pessoa.",
     };
   } else if (marchaCadeira === "3") {
     return {
@@ -580,7 +580,7 @@ const marchaCadeiraResult = (marchaCadeira, cadeirante) => {
     return {
       area: "Marcha/ Cadeira de rodas:",
       value:
-        "Requer alguém ao lado, com ou sem encorajamento ou sugestão para conduzir a cadeira de rodas por pelo menos 50 metros.",
+        "Supervisão - Requer alguém ao lado, com ou sem encorajamento ou sugestão para conduzir a cadeira de rodas por pelo menos 50 metros.",
     };
   } else if (marchaCadeira === "5") {
     return {
@@ -592,7 +592,7 @@ const marchaCadeiraResult = (marchaCadeira, cadeirante) => {
     return {
       area: "Marcha/ Cadeira de rodas:",
       value:
-        "Independência Modificada - Se a pessoa anda... anda pelo menos 50 metros, mas usa órtese ou prótese em membro inferior, sapatos especiais, bengala, muletas ou andadores. Leva um tempo acima do razoável ou há riscos de segurança.",
+        "Independência Modificada - Se a pessoa anda, anda pelo menos 50 metros, mas usa órtese ou prótese em membro inferior, sapatos especiais, bengala, muletas ou andadores. Leva um tempo acima do razoável ou há riscos de segurança.",
     };
   } else if (marchaCadeira === "7") {
     return {
@@ -612,7 +612,7 @@ const escadasResult = (escadas) => {
     return {
       area: "Escadas:",
       value:
-        "A pessoa executa de menos de 25% do esforço, ou requer assistência de duas pessoas ou não sobre e desce 4 a 6 degraus e é carregada.",
+        "Assistência Total - A pessoa executa de menos de 25% do esforço, ou requer assistência de duas pessoas ou não sobe e desce 4 a 6 degraus e é carregada.",
     };
   } else if (escadas === "2") {
     return {
@@ -735,13 +735,13 @@ const expressaoResult = (expressao) => {
     return {
       area: "Expressão:",
       value:
-        "Facilitação Mínima - Exprime ideias e necessidades cotidianas básicas em 75 a 90% do tempo.Requer facilitações entre 10 e 25% do tempo de expressão.",
+        "Facilitação Mínima - Exprime ideias e necessidades cotidianas básicas em 75 a 90% do tempo. Requer facilitações entre 10 e 25% do tempo de expressão.",
     };
   } else if (expressao === "5") {
     return {
       area: "Expressão:",
       value:
-        "Facilitação Potencial - Exprime ideias e necessidades cotidinas básicas em mais de 90% do tempo.Em menos de 10% do tempo requer facilitações (por exemplo, repetição frequente) para ser entendido.",
+        "Facilitação Potencial - Exprime ideias e necessidades cotidinas básicas em mais de 90% do tempo. Em menos de 10% do tempo requer facilitações (por exemplo, repetição frequente) para ser entendido.",
     };
   } else if (expressao === "6") {
     return {
@@ -820,7 +820,7 @@ const resolucaoResult = (resolucao) => {
     return {
       area: "Resolução de Problemas:",
       value:
-        "Orientação Total - A pessoa resolve problemas de rotina em menos de 25% do tempo. Necessitando de orientação quase todo o tempo ou não resolve efetivamente os problemas. Pode necessitar constantemente de orientação para completas, uma a uma, as atividades diárias.",
+        "Orientação Total - A pessoa resolve problemas de rotina em menos de 25% do tempo. Necessitando de orientação quase todo o tempo ou não resolve efetivamente os problemas. Pode necessitar constantemente de orientação para completar, uma a uma, as atividades diárias.",
     };
   } else if (resolucao === "2") {
     return {

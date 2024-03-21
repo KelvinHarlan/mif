@@ -3,6 +3,7 @@ import Input from "@/components/common/form/Input/Input";
 import Select from "@/components/common/form/select/Select";
 import Image from "next/image";
 import { useRef, useState } from "react";
+
 import {
   FaCommentDots,
   FaCopy,
@@ -15,7 +16,9 @@ import {
   FaUtensils,
   FaWheelchair,
 } from "react-icons/fa";
+import { toast } from "react-toastify";
 import imagem from "../../../public/imagens/logo.png";
+import ModalClear from "./components/ModalClear/ModalClear";
 import ModalResultMobile from "./components/ModalResultMobile";
 import {
   alimentacaoResult,
@@ -39,8 +42,6 @@ import {
 } from "./components/data";
 import "./components/homeStyle.css";
 import ResultPdf from "./components/resultPdf";
-import { toast } from "react-toastify";
-import ModalClear from "./components/ModalClear/ModalClear";
 
 const index = () => {
   //Variables
@@ -178,11 +179,6 @@ const index = () => {
     setAcompanhante(!acompanhante);
   };
 
-  //handle Print
-  const handlePrint = () => {
-    window.print();
-  };
-
   //Handle Clear
   const clear = () => {
     setNome("");
@@ -239,6 +235,33 @@ const index = () => {
         });
     } else {
       toast.error("Não há texto para copiar");
+    }
+  };
+
+  //Download
+  const handlePrint = () => {
+    const contentToPrint = document.getElementById("content-print");
+    if (contentToPrint) {
+      const content = contentToPrint.innerHTML;
+      const printWindow = window.open("", "_blank");
+      printWindow.document.open();
+      printWindow.document.write(`
+        <html>
+          <head>
+            <title>Print</title>
+            <style>
+              body {
+                text-align: justify;
+              }
+            </style>
+          </head>
+          <body>
+            ${content}
+          </body>
+        </html>
+      `);
+      printWindow.document.close();
+      printWindow.print();
     }
   };
 
@@ -612,7 +635,7 @@ const index = () => {
           </form>
 
           <div ref={componenteRef} className="caixa-resultados">
-            <div className="texto-resultado">
+            <div id="content-print" className="texto-resultado">
               {
                 <ResultPdf
                   alimentacao={alimentacaoB}
@@ -664,6 +687,7 @@ const index = () => {
             <FaRegTrashAlt />
           </button>
           <button
+            onClick={handlePrint}
             style={{ backgroundColor: "#271d77" }}
             className="btn bg-white border"
           >

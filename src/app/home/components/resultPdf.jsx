@@ -31,7 +31,7 @@ const ResultPdf = ({
         {enviado && (
           <div style={{ padding: "20px" }} className="container-resul">
             <p>
-              {`Realizada visita a paciente ${
+              {`Realizada visita ${sexo === "Feminino" ? "a" : "ao"} paciente ${
                 nome ? nome.toUpperCase() : "[ NOME ]"
               }, ${idade ? idade : "[ IDADE ]"} anos, em
         ${local ? local : "[ LOCAL ]"} para Avaliação Inicial da ${
@@ -42,7 +42,7 @@ const ResultPdf = ({
               Aplicada a avaliação padronizada de Medida de Independência
               Funcional, com objetivo de avaliar o desempenho da paciente
               durante a realização das atividades cotidianas. De acordo com a
-              Medida de Independência Funcional (MIF), o (a) paciente apresenta
+              Medida de Independência Funcional (MIF), {`${sexo === "Feminino" ? "a" : "o"}`} paciente apresenta
               dependência moderada relacionado às atividades investigadas pela
               medida, com necessidade de suporte da equipe e/ou cuidador para
               realização de atividades cotidianas básicas, conforme descrito a
