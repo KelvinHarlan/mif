@@ -39,7 +39,7 @@ body{
   }
 
  .card-login-desktop input::placeholder {
-    color: #271d77;
+    color: #6699ae;
   }
 
   .image-login{
@@ -53,7 +53,7 @@ body{
     height: 45px;
     min-width: 100% !important;
     border-radius: 20px;
-    border: 1px solid #271d77;
+    border: 1px solid #6699ae ;
     background-color: #fff;
   }
 
@@ -85,7 +85,7 @@ body{
   .btn-login{
     width: 100%;
     border: none;
-    background-color: #271d77;
+    background-color: #6699ae;
     color: #fff;
     margin: 5px;
     
@@ -159,7 +159,7 @@ body{
     height: 45px;
     min-width: 100% !important;
     border-radius: 20px;
-    border: 1px solid #271d77;
+    border: 1px solid #6699ae;
     background-color: #fff;
   }
 
@@ -192,7 +192,7 @@ body{
   .btn-login{
     width: 100%;
     border: none;
-    background-color: #271d77;
+    background-color: #6699ae;
     color: #fff;
     margin: 5px;
     

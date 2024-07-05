@@ -27,7 +27,7 @@ const Login = () => {
     ) {
       console.log("Login realizado com sucesso");
       toast.success("Login realizado com sucesso!", { autoClose: 1000 });
-      router.push("/assessment");
+      router.push("/home");
     } else {
       toast.error("Login ou senha inválido.");
     }
@@ -57,8 +57,8 @@ const Login = () => {
           <div className="image-login">
             <Image
               src={imagem}
-              width={220}
-              height={75}
+              width={200}
+              height={200}
               alt="Logo"
               priority={true}
             />
@@ -71,7 +71,7 @@ const Login = () => {
               id="email"
               placeholder="Email"
             />
-            <FaUser style={{ color: "#271d77" }} />
+            <FaUser style={{ color: "#6699ae " }} />
           </div>
           <div className="input-login">
             <Input
@@ -80,18 +80,18 @@ const Login = () => {
               placeholder="Senha"
             />
             {!password ? (
-              <FaLock style={{ color: "#271d77" }} />
+              <FaLock style={{ color: "#6699ae " }} />
             ) : (
               <>
                 {!viewPassword ? (
                   <FaEye
                     onClick={handleViewPassword}
-                    style={{ color: "#271d77" }}
+                    style={{ color: "#6699ae " }}
                   />
                 ) : (
                   <FaRegEyeSlash
                     onClick={handleViewPassword}
-                    style={{ color: "#271d77" }}
+                    style={{ color: "#6699ae " }}
                   />
                 )}
               </>
